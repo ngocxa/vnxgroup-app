@@ -1,0 +1,24 @@
+APP VNXGROUP – HƯỚNG DẪN ĐƯA LÊN MẠNG (miễn phí, khoảng 10 phút)
+
+1. Vào https://github.com, tạo tài khoản (nếu chưa có).
+2. Bấm dấu "+" (góc phải trên) > New repository.
+   - Repository name: vnxgroup-app
+   - Chọn Public > bấm Create repository.
+3. Bấm "uploading an existing file", kéo thả TOÀN BỘ nội dung thư mục app
+   (index.html, manifest.json, sw.js và thư mục icons) > bấm Commit changes.
+4. Vào Settings > Pages:
+   - Source: Deploy from a branch
+   - Branch: main, thư mục / (root) > Save.
+5. Đợi 1–2 phút, app chạy tại: https://<tên-github-của-bạn>.github.io/vnxgroup-app/
+
+CÀI APP LÊN ĐIỆN THOẠI
+- Android (Chrome): mở link app > bấm nút "Cài đặt" trong app (hoặc menu ⋮ > Cài đặt ứng dụng).
+- iPhone (Safari): mở link app > nút Chia sẻ ⬆ > "Thêm vào MH chính".
+
+NHẮC GIỜ KINH 19:45
+- Trong app: tab "Thêm" > "Thêm vào Lịch Google" (Android) hoặc "Thêm vào Lịch iPhone".
+  Điện thoại sẽ báo trước 10 phút mỗi tối, kể cả khi không mở app.
+
+CẬP NHẬT APP VỀ SAU
+- Sửa file rồi tải lại lên GitHub. Nếu sửa nhiều, đổi dòng  const V = 'vnx-v1'
+  trong sw.js thành 'vnx-v2' để điện thoại tải bản mới.

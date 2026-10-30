@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VNXGroup – Giờ Kinh Tối Gia Đình</title>
+<meta name="description" content="Giờ kinh Mân Côi 19:45, Lời Chúa hằng ngày, truyện tích và tin Công Giáo.">
+<meta name="theme-color" content="#14234b">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VNXGroup">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('vnx-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<style>
+:root{--navy:#14234b;--navy2:#1e3a8a;--gold:#d4a537;--gold2:#f3d27a;--rose:#c2185b;--bg:#faf7f0;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#ebe4d4;--shadow:0 6px 20px rgba(20,35,75,.08);--ff:'Be Vietnam Pro',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;--fh:'Playfair Display',Georgia,serif;--st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px)}
+html[data-theme=dark]{--bg:#0e1322;--card:#171f35;--text:#e8eaf1;--muted:#9ba4b8;--line:#263052;--shadow:0 6px 20px rgba(0,0,0,.35)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--ff);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+img{max-width:100%}
+.shell{max-width:680px;margin:0 auto;min-height:100vh;position:relative}
+
+/* thanh trên */
+.appbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;padding:calc(10px + var(--st)) 16px 10px;background:linear-gradient(135deg,#14234b,#1e3a8a 65%,#3b2a6b);color:#fff;box-shadow:0 6px 20px rgba(20,35,75,.25)}
+.appbar img{width:46px;height:46px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.35))}
+.ab-t{flex:1;min-width:0;line-height:1.15}
+.ab-t b{font:800 21px var(--fh)}.ab-t b i{font-style:normal;color:var(--gold2)}
+.ab-t small{display:block;font-size:11.5px;color:#cdd5ee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ab-btn{width:40px;height:40px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;font-size:17px}
+.ab-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round}
+
+main{padding:16px 16px calc(96px + var(--sb))}
+
+/* tab dưới */
+.tabbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(10px + var(--sb));width:calc(100% - 20px);max-width:660px;z-index:40;display:flex;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 30px rgba(20,35,75,.22);padding:6px}
+.tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:11px;font-weight:600;color:var(--muted);padding:6px 0;border-radius:16px;transition:.2s}
+.tabbar em{font-style:normal;font-size:21px;line-height:1.15;transition:transform .2s}
+.tabbar a.on{color:var(--rose);background:rgba(194,24,91,.09)}
+.tabbar a.on em{transform:translateY(-2px) scale(1.12)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:22px;color:#fff;background:linear-gradient(135deg,#14234b,#2a1f5c 55%,#5b1640);box-shadow:0 16px 40px rgba(20,35,75,.25)}
+.hero:before{content:'\271D';position:absolute;right:-6px;top:-40px;font:200px/1 serif;color:rgba(255,255,255,.05)}
+.hero.live{box-shadow:0 0 0 3px rgba(239,68,68,.55),0 16px 40px rgba(20,35,75,.25)}
+.eyebrow{display:inline-flex;gap:6px;align-items:center;font-size:12.5px;font-weight:600;color:var(--gold2);background:rgba(243,210,122,.14);border:1px solid rgba(243,210,122,.35);padding:4px 12px;border-radius:999px}
+.hero h1{font:800 26px/1.2 var(--fh);margin:12px 0 4px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.cd-label{font-size:13.5px;color:#d6dcf0;margin-bottom:10px}
+.cd{display:flex;gap:8px}
+.cd div{flex:1;background:rgba(0,0,0,.25);border-radius:14px;padding:10px 0;text-align:center}
+.cd b{display:block;font:800 30px/1 var(--fh);color:var(--gold2)}
+.cd span{font-size:11.5px;color:#c3cbe4}
+.mys{margin-top:12px;font-size:14px;font-weight:600;color:#fbcfe8}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.7)}70%{box-shadow:0 0 0 8px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+
+/* nút nhanh */
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 6px;text-align:center;font-size:12.5px;font-weight:600;box-shadow:var(--shadow);color:var(--text)}
+.q em{display:block;font-style:normal;font-size:24px;margin-bottom:2px}
+.q.red{background:linear-gradient(135deg,#b91c1c,#ef4444);color:#fff;border:0}
+
+/* chuyên mục */
+.sec-h{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px}
+.sec-h h2{font:800 21px/1.2 var(--fh);margin:0;display:flex;align-items:center;gap:9px}
+.sec-h h2:before{content:'';width:5px;height:21px;border-radius:3px;background:linear-gradient(var(--gold),var(--rose))}
+.chips{display:flex;gap:10px;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;gap:8px;padding:9px 14px 9px 9px;border-radius:999px;color:#fff;font-weight:600;font-size:14px;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 6px 14px rgba(0,0,0,.12)}
+.chip span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.22);font-size:15px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{position:relative;overflow:hidden;border-radius:20px;padding:14px;min-height:110px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,var(--c1),var(--c2));box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.tile .ti{position:absolute;top:10px;right:10px;font-size:30px}
+.tile b{font-size:15px;line-height:1.25}.tile small{font-size:12px;opacity:.88;line-height:1.35}
+
+/* danh sách bài */
+.list{display:flex;flex-direction:column;gap:12px}
+.item{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:var(--shadow);transition:transform .15s}
+.item:active{transform:scale(.98)}
+.item .th{flex:none;width:108px;height:80px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#1e3a8a,#5b1640);display:grid;place-items:center;color:rgba(255,255,255,.6);font-size:28px}
+.th img{width:100%;height:100%;object-fit:cover;display:block}
+.item .tx{min-width:0;display:flex;flex-direction:column;gap:3px}
+.lab{font-size:11.5px;font-weight:700;color:var(--rose);text-transform:capitalize}
+.item h3{margin:0;font-size:15px;line-height:1.38;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dt{font-size:12px;color:var(--muted);margin-top:auto}
+.item.big{flex-direction:column;padding:0;overflow:hidden}
+.item.big .th{width:100%;height:auto;aspect-ratio:16/9;border-radius:0}
+.item.big .tx{padding:4px 14px 14px}
+.item.big h3{font:800 20px/1.3 var(--fh)}
+.item.big p{margin:0;color:var(--muted);font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.more-btn{display:block;width:100%;margin-top:14px;padding:13px;border:0;border-radius:16px;font-weight:700;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--navy),var(--navy2))}
+.sk{background:linear-gradient(90deg,var(--line),var(--card),var(--line));background-size:200% 100%;animation:sk 1.2s infinite;border-radius:18px;height:100px}
+@keyframes sk{to{background-position:-200% 0}}
+.empty{text-align:center;color:var(--muted);padding:30px 10px}
+.page-h{border-radius:20px;padding:18px;color:#fff;background:linear-gradient(135deg,var(--c1,#14234b),var(--c2,#1e3a8a));margin-bottom:16px;position:relative;overflow:hidden}
+.page-h small{opacity:.85;font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+.page-h h1{margin:2px 0 0;font:800 24px/1.25 var(--fh);text-transform:capitalize}
+.page-h .pi{position:absolute;right:14px;top:10px;font-size:44px;opacity:.9}
+
+/* bài viết */
+.back{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--rose);margin-bottom:10px;background:none;border:0;padding:4px 0;font-size:15px}
+.post h1{font:800 26px/1.25 var(--fh);margin:6px 0 10px}
+.cover{width:100%;border-radius:18px;margin:4px 0 14px;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.meta span{background:var(--card);border:1px solid var(--line);padding:4px 11px;border-radius:999px;font-size:12.5px;color:var(--muted)}
+.entry{font-size:17.5px;line-height:1.8;overflow-wrap:break-word}
+.entry *{max-width:100% !important}
+.entry img{height:auto !important;border-radius:12px}
+.entry iframe{width:100% !important;aspect-ratio:16/9;height:auto !important;border:0;border-radius:12px}
+.entry a{color:var(--rose)}
+.entry h1,.entry h2,.entry h3{font-family:var(--fh);line-height:1.3}
+.entry blockquote{margin:16px 0;padding:12px 16px;border-left:4px solid var(--gold);background:rgba(212,165,55,.09);border-radius:0 12px 12px 0}
+.entry pre{white-space:pre-wrap}
+.entry table{display:block;overflow-x:auto}
+.font-ctl{display:flex;gap:6px;margin-left:auto}
+.font-ctl button{width:34px;height:30px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:700}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:16px;font-weight:700;font-size:15px;border:0;color:#fff;background:linear-gradient(135deg,var(--navy),var(--navy2))}
+.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1d05}
+.btn.red{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+.btn.line{background:var(--card);color:var(--text);border:1px solid var(--line)}
+
+/* tìm kiếm */
+.sbox{display:flex;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px;box-shadow:var(--shadow);margin-bottom:16px}
+.sbox input{flex:1;min-width:0;border:0;background:transparent;font:500 16px var(--ff);color:var(--text);padding:8px 10px;outline:none}
+.sbox button{border:0;border-radius:12px;padding:0 18px;font-weight:700;color:#fff;background:var(--navy2)}
+
+/* trang Thêm */
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
+.box h3{margin:0 0 4px;font:800 18px var(--fh)}
+.box p{margin:0 0 12px;color:var(--muted);font-size:14px}
+.stack{display:flex;flex-direction:column;gap:10px}
+.row{display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid var(--line);font-weight:600}
+.row:last-child{border-bottom:0}
+.row em{font-style:normal;font-size:20px;width:28px;text-align:center}
+.row span{flex:1}
+.sw{width:48px;height:28px;border-radius:999px;background:var(--line);position:relative;border:0;transition:.2s;flex:none}
+.sw:after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:.2s}
+.sw.on{background:var(--rose)}.sw.on:after{left:23px}
+.ver{text-align:center;color:var(--muted);font-size:12.5px;margin-top:18px}
+
+/* thông báo nhỏ & hướng dẫn cài */
+.toast{position:fixed;left:50%;bottom:calc(96px + var(--sb));transform:translate(-50%,20px);background:#111827;color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;transition:.25s;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.install{display:none;align-items:center;gap:12px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1d05;border-radius:18px;padding:12px 14px;margin-bottom:14px;font-weight:600;font-size:14px}
+.install.show{display:flex}
+.install b{display:block;font-size:15px}
+.install button{margin-left:auto;border:0;border-radius:12px;padding:9px 14px;background:var(--navy);color:#fff;font-weight:700;flex:none}
+.ios-tip{display:none}
+.ios .ios-tip{display:block}
+</style>
+</head>
+<body>
+<div class="shell">
+ <header class="appbar">
+  <img src="icons/icon-192.png" alt="VNXGroup">
+  <div class="ab-t"><b>VNX<i>Group</i></b><small id="abSub">Kết nối đức tin – Lan tỏa yêu thương</small></div>
+  <a class="ab-btn" href="#/search" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
+  <button class="ab-btn" id="themeBtn" aria-label="Sáng / tối">🌙</button>
+ </header>
+ <main id="view"></main>
+ <nav class="tabbar" id="tabbar">
+  <a href="#/" data-tab="home"><em>🏠</em>Trang chủ</a>
+  <a href="#/label/giờ kinh tối" data-tab="giờ kinh tối"><em>🕯️</em>Giờ kinh</a>
+  <a href="#/label/lời chúa hằng ngày" data-tab="lời chúa hằng ngày"><em>📖</em>Lời Chúa</a>
+  <a href="#/label/chuỗi mân côi" data-tab="chuỗi mân côi"><em>📿</em>Mân Côi</a>
+  <a href="#/more" data-tab="more"><em>☰</em>Thêm</a>
+ </nav>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+'use strict';
+var BLOG='https://vnxgroup.blogspot.com', YT='https://www.youtube.com/@vnxgroup', VER='1.0.0';
+var CATS=[
+ {l:'giờ kinh tối',t:'Giờ kinh tối',e:'🕯️',d:'Kinh Mân Côi gia đình 19:45',c:['#312e81','#7c3aed']},
+ {l:'lời chúa hằng ngày',t:'Lời Chúa hằng ngày',e:'📜',d:'Tin Mừng & lời cầu nguyện',c:['#92400e','#f59e0b']},
+ {l:'chuỗi mân côi',t:'Chuỗi Mân Côi',e:'📿',d:'Lần hạt cùng Mẹ Maria',c:['#831843','#ec4899']},
+ {l:'truyện tích',t:'Truyện tích',e:'📚',d:'100 truyện tích Mân Côi',c:['#7c2d12','#fb923c']},
+ {l:'Trò chơi Kinh Thánh',t:'Trò chơi Kinh Thánh',e:'🧩',d:'Học Lời Chúa thật vui',c:['#115e59','#14b8a6']},
+ {l:'tuần cửu nhật',t:'Tuần cửu nhật',e:'🗓️',d:'Chín ngày cầu nguyện',c:['#1e3a8a','#60a5fa']},
+ {l:'lòng thương xót',t:'Lòng Chúa Thương Xót',e:'❤️',d:'Kinh Lòng Thương Xót',c:['#9f1239','#fb7185']},
+ {l:'hạnh các thánh',t:'Hạnh các thánh',e:'😇',d:'Gương sáng các thánh',c:['#a16207','#fbbf24']},
+ {l:'ơn lành',t:'Ơn lành',e:'🕊️',d:'Chứng từ ơn Chúa ban',c:['#0369a1','#38bdf8']},
+ {l:'tin công giáo',t:'Tin Công Giáo',e:'⛪',d:'Giáo phận · VN · Hoàn vũ',c:['#1e3a8a','#6366f1']},
+ {l:'Sống đẹp',t:'Sống đẹp',e:'🌿',d:'Bài học làm người',c:['#166534','#22c55e']},
+ {l:'Góp nhặt',t:'Góp nhặt',e:'🧺',d:'Kiến thức hay, sức khỏe',c:['#c2410c','#fdba74']},
+ {l:'video',t:'Video',e:'🎬',d:'Video giờ kinh & bài giảng',c:['#7f1d1d','#ef4444']}
+];
+var DAYS=['Chúa Nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+var MYS=['Năm Sự Mừng','Năm Sự Vui','Năm Sự Thương','Năm Sự Mừng','Năm Sự Sáng','Năm Sự Thương','Năm Sự Vui'];
+var d=document, view=d.getElementById('view'), mem={}, store={};
+try{store=window.localStorage}catch(e){store={getItem:function(){return null},setItem:function(){}}}
+
+function $(id){return d.getElementById(id)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function cat(l){l=(l||'').toLowerCase();for(var i=0;i<CATS.length;i++)if(CATS[i].l.toLowerCase()===l)return CATS[i];return null}
+function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('show')},2200)}
+function p2(n){return(n<10?'0':'')+n}
+function vnNow(){var n=new Date();return new Date(n.getTime()+n.getTimezoneOffset()*60000+7*3600000)}
+function fmt(dt){return p2(dt.getDate())+'/'+p2(dt.getMonth()+1)+'/'+dt.getFullYear()}
+
+/* ---------- Lấy dữ liệu từ Blogger (JSONP) ---------- */
+function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return(h>>>0).toString(36)}
+function feed(path,params){
+ return new Promise(function(res,rej){
+  var q=['alt=json-in-script'];for(var k in params)q.push(k+'='+encodeURIComponent(params[k]));
+  var base=BLOG+path+'?'+q.join('&'),cb='vnx_'+hash(base),s=d.createElement('script');
+  var t=setTimeout(function(){done();rej(new Error('timeout'))},15000);
+  function done(){clearTimeout(t);window[cb]=function(){};s.remove()}
+  window[cb]=function(j){done();res(j)};
+  s.onerror=function(){done();rej(new Error('net'))};
+  s.src=base+'&callback='+cb;d.head.appendChild(s);
+ });
+}
+function big(u){return u?u.replace(/\/s72(-[^\/]*)?\//,'/w640-h360-p-k-no-nu/').replace(/\/w72-h72-[^\/]*\//,'/w640-h360-p-k-no-nu/').replace(/=s72-c$/,'=w640-h360-p-k-no-nu'):''}
+function strip(h){var x=d.createElement('div');x.innerHTML=h;return(x.textContent||'').replace(/\s+/g,' ').trim()}
+function parse(e){
+ var id=((e.id.$t.match(/post-(\d+)/))||[])[1],url='#',i;
+ for(i=0;i<e.link.length;i++)if(e.link[i].rel==='alternate')url=e.link[i].href;
+ var content=(e.content&&e.content.$t)||'',img=(e.media$thumbnail&&e.media$thumbnail.url)||'';
+ if(!img){var m=content.match(/<img[^>]+src="([^"]+)"/i);if(m)img=m[1]}
+ var p={id:id,url:url,title:e.title.$t,img:big(img),labels:(e.category||[]).map(function(c){return c.term}),date:new Date(e.published.$t),
+  sum:(e.summary?e.summary.$t:strip(content)).replace(/\s+/g,' ').slice(0,170),content:content,author:e.author&&e.author[0]&&e.author[0].name.$t};
+ mem[id]=Object.assign(mem[id]||{},p,content?{}:{content:(mem[id]||{}).content||''});return p;
+}
+
+/* ---------- Thẻ bài viết ---------- */
+function card(p,isBig){
+ var lab=p.labels[0]||'';
+ return '<a class="item'+(isBig?' big':'')+'" href="#/post/'+p.id+'"><div class="th">'+(p.img?'<img loading="lazy" alt="" src="'+esc(p.img)+'">':'✝')+'</div><div class="tx">'+
+  (lab?'<span class="lab">'+esc(lab)+'</span>':'')+'<h3>'+esc(p.title)+'</h3>'+(isBig?'<p>'+esc(p.sum)+'</p>':'')+'<span class="dt">📅 '+fmt(p.date)+'</span></div></a>';
+}
+function skel(n){var s='';for(var i=0;i<n;i++)s+='<div class="sk"></div>';return s}
+function loadList(box,path,params,first){
+ var start=1,per=10,busy=false,btn=d.createElement('button');
+ btn.className='more-btn';btn.textContent='Xem thêm bài';btn.style.display='none';
+ box.innerHTML=skel(4);box.after(btn);
+ function go(){
+  if(busy)return;busy=true;btn.textContent='Đang tải…';
+  feed(path,Object.assign({'max-results':per,'start-index':start},params)).then(function(j){
+   var es=(j.feed.entry||[]).map(parse),total=+((j.feed.openSearch$totalResults||{}).$t||0);
+   if(start===1)box.innerHTML='';
+   if(!es.length&&start===1)box.innerHTML='<div class="empty">🙏 Chưa có bài viết nào ở đây.</div>';
+   box.insertAdjacentHTML('beforeend',es.map(function(p,i){return card(p,first&&start===1&&i===0)}).join(''));
+   start+=per;btn.style.display=start<=total?'block':'none';btn.textContent='Xem thêm bài';busy=false;
+  }).catch(function(){
+   busy=false;btn.textContent='Thử lại';btn.style.display='block';
+   if(start===1)box.innerHTML='<div class="empty">📶 Không tải được bài viết.<br>Kiểm tra kết nối mạng rồi thử lại.</div>';
+  });
+ }
+ btn.onclick=go;go();
+}
+
+/* ---------- Trang chủ ---------- */
+function hero(){
+ return '<section class="hero" id="hero"><span class="eyebrow">🕯️ Giờ Kinh Tối Gia Đình</span><h1>Cùng lần chuỗi Mân Côi <em>lúc 19:45</em></h1>'+
+ '<div class="cd-label" id="cdLabel">Giờ kinh tối nay bắt đầu sau</div><div class="cd"><div><b id="cdH">00</b><span>giờ</span></div><div><b id="cdM">00</b><span>phút</span></div><div><b id="cdS">00</b><span>giây</span></div></div>'+
+ '<div class="mys" id="cdMys">📿 …</div></section>';
+}
+function home(){
+ view.innerHTML='<div class="install" id="installBar"><span>📲</span><div><b>Cài app VNXGroup</b>Mở nhanh từ màn hình chính</div><button id="installGo">Cài đặt</button></div>'+hero()+
+ '<div class="quick"><a class="q red" href="'+YT+'" target="_blank" rel="noopener"><em>▶️</em>Tham dự trực tiếp</a><a class="q" href="#/today"><em>📖</em>Lời kinh hôm nay</a><a class="q" href="#/more"><em>🔔</em>Nhắc giờ kinh</a></div>'+
+ '<div class="sec-h"><h2>Chuyên mục</h2></div><div class="chips">'+CATS.map(function(c){return '<a class="chip" style="--c1:'+c.c[0]+';--c2:'+c.c[1]+'" href="#/label/'+encodeURIComponent(c.l)+'"><span>'+c.e+'</span>'+esc(c.t)+'</a>'}).join('')+'</div>'+
+ '<div class="sec-h"><h2>Bài mới nhất</h2></div><div class="list" id="list"></div>';
+ loadList($('list'),'/feeds/posts/summary',{},true);showInstall();tick();
+}
+function today(){
+ view.innerHTML=skel(3);
+ feed('/feeds/posts/summary/-/'+encodeURIComponent('giờ kinh tối'),{'max-results':1}).then(function(j){
+  var e=(j.feed.entry||[])[0];if(!e){location.replace('#/label/'+encodeURIComponent('giờ kinh tối'));return}
+  location.replace('#/post/'+parse(e).id);
+ }).catch(function(){view.innerHTML='<div class="empty">📶 Không tải được. Vui lòng thử lại.</div>'});
+}
+
+/* ---------- Chuyên mục ---------- */
+function label(l){
+ var c=cat(l)||{t:l,e:'🏷️',c:['#14234b','#1e3a8a']};
+ view.innerHTML='<div class="page-h" style="--c1:'+c.c[0]+';--c2:'+c.c[1]+'"><span class="pi">'+c.e+'</span><small>Chuyên mục</small><h1>'+esc(c.t)+'</h1></div>'+
+  (l==='giờ kinh tối'?hero().replace('class="hero"','class="hero" style="margin-bottom:16px"'):'')+'<div class="list" id="list"></div>';
+ loadList($('list'),'/feeds/posts/summary/-/'+encodeURIComponent(l),{},false);tick();
+}
+
+/* ---------- Đọc bài ---------- */
+function clean(html){
+ var doc=new DOMParser().parseFromString('<div>'+html+'</div>','text/html'),root=doc.body.firstChild;
+ root.querySelectorAll('script,style,link,meta,noscript').forEach(function(n){n.remove()});
+ root.querySelectorAll('*').forEach(function(n){for(var i=n.attributes.length-1;i>=0;i--){var a=n.attributes[i].name;if(/^on/i.test(a))n.removeAttribute(a)}});
+ root.querySelectorAll('a[href]').forEach(function(a){if(/^javascript:/i.test(a.getAttribute('href')))a.removeAttribute('href');else if(a.getAttribute('href').charAt(0)!=='#'){a.target='_blank';a.rel='noopener'}});
+ root.querySelectorAll('img').forEach(function(i){i.loading='lazy';i.removeAttribute('width');i.removeAttribute('height');var a=i.closest('a');if(a&&/\.(png|jpe?g|webp|gif)/i.test(a.href||''))a.removeAttribute('target')});
+ root.querySelectorAll('iframe').forEach(function(f){var s=f.getAttribute('src')||'';if(s.indexOf('//')===0)f.setAttribute('src','https:'+s);f.setAttribute('allowfullscreen','');f.setAttribute('loading','lazy')});
+ return root.innerHTML;
+}
+function postView(id){
+ var p=mem[id];
+ function render(p){
+  var lab=p.labels[0],size=+(store.getItem('vnx-fs')||17.5);
+  view.innerHTML='<article class="post"><div style="display:flex;align-items:center"><button class="back" id="backBtn">‹ Quay lại</button><div class="font-ctl"><button id="fsDown">A-</button><button id="fsUp">A+</button></div></div>'+
+   (lab?'<a class="lab" href="#/label/'+encodeURIComponent(lab)+'">'+esc(lab)+'</a>':'')+'<h1>'+esc(p.title)+'</h1>'+
+   '<div class="meta"><span>📅 '+fmt(p.date)+'</span>'+(p.author?'<span>✍️ '+esc(p.author)+'</span>':'')+'</div>'+
+   (p.content?'<div class="entry" id="entry" style="font-size:'+size+'px">'+clean(p.content)+'</div>':skel(5))+
+   '<div class="actions"><button class="btn gold" id="shareBtn">📤 Chia sẻ</button><a class="btn line" href="'+esc(p.url)+'" target="_blank" rel="noopener">🌐 Mở trên blog</a></div></article>';
+  $('backBtn').onclick=function(){if(history.length>1)history.back();else location.hash='#/'};
+  function fs(dv){size=Math.min(24,Math.max(14,size+dv));store.setItem('vnx-fs',size);var en=$('entry');if(en)en.style.fontSize=size+'px'}
+  $('fsUp').onclick=function(){fs(1.5)};$('fsDown').onclick=function(){fs(-1.5)};
+  $('shareBtn').onclick=function(){
+   if(navigator.share)navigator.share({title:p.title,url:p.url}).catch(function(){});
+   else if(navigator.clipboard)navigator.clipboard.writeText(p.url).then(function(){toast('✅ Đã chép đường link bài viết')});
+  };
+ }
+ if(p)render(p);else view.innerHTML=skel(4);
+ if(!p||!p.content){
+  feed('/feeds/posts/default/'+id,{}).then(function(j){var q=parse(j.entry);q.content=j.entry.content?j.entry.content.$t:'';mem[id]=q;if(location.hash==='#/post/'+id)render(q)})
+  .catch(function(){if(!p||!p.content)view.innerHTML='<div class="empty">📶 Không mở được bài viết này khi đang mất mạng.</div>'});
+ }
+}
+
+/* ---------- Tìm kiếm ---------- */
+function search(q){
+ view.innerHTML='<form class="sbox" id="sform"><input id="sq" type="search" placeholder="Tìm lời kinh, truyện tích, bài viết…" value="'+esc(q)+'"><button>Tìm</button></form>'+
+  (q?'<div class="list" id="list"></div>':'<div class="sec-h"><h2>Gợi ý</h2></div><div class="tiles">'+CATS.slice(0,6).map(tile).join('')+'</div>');
+ $('sform').onsubmit=function(e){e.preventDefault();var v=$('sq').value.trim();if(v)location.hash='#/search/'+encodeURIComponent(v)};
+ if(q)loadList($('list'),'/feeds/posts/summary',{q:q},false);else setTimeout(function(){$('sq').focus()},100);
+}
+function tile(c){return '<a class="tile" style="--c1:'+c.c[0]+';--c2:'+c.c[1]+'" href="#/label/'+encodeURIComponent(c.l)+'"><span class="ti">'+c.e+'</span><b>'+esc(c.t)+'</b><small>'+esc(c.d)+'</small></a>'}
+
+/* ---------- Nhắc giờ kinh ---------- */
+function icsDate(dt){return dt.getUTCFullYear()+p2(dt.getUTCMonth()+1)+p2(dt.getUTCDate())+'T'+p2(dt.getUTCHours())+p2(dt.getUTCMinutes())+'00Z'}
+function nextStart(){var v=vnNow(),y=v.getFullYear(),m=v.getMonth(),dd=v.getDate();return new Date(Date.UTC(y,m,dd,12,45))} /* 19:45 VN = 12:45 UTC */
+function addIcs(){
+ var s=nextStart(),e=new Date(s.getTime()+45*60000);
+ var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//VNXGroup//Gio kinh toi//VI','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:vnx-gio-kinh-toi-1945@vnxgroup','DTSTAMP:'+icsDate(new Date()),
+  'DTSTART:'+icsDate(s),'DTEND:'+icsDate(e),'RRULE:FREQ=DAILY','SUMMARY:🕯️ Giờ Kinh Tối Gia Đình – VNX Group','DESCRIPTION:Cùng lần chuỗi Mân Côi lúc 19:45 trên kênh YouTube VNX Group.','URL:'+YT,
+  'BEGIN:VALARM','TRIGGER:-PT10M','ACTION:DISPLAY','DESCRIPTION:Còn 10 phút nữa đến Giờ Kinh Tối','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+ var a=d.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.download='gio-kinh-toi-vnxgroup.ics';d.body.appendChild(a);a.click();a.remove();
+ toast('📅 Mở tệp vừa tải để thêm vào Lịch');
+}
+function gcal(){
+ var s=nextStart(),e=new Date(s.getTime()+45*60000);
+ return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('🕯️ Giờ Kinh Tối Gia Đình – VNX Group')+'&dates='+icsDate(s)+'/'+icsDate(e)+
+  '&recur='+encodeURIComponent('RRULE:FREQ=DAILY')+'&details='+encodeURIComponent('Cùng lần chuỗi Mân Côi lúc 19:45 trên kênh YouTube VNX Group: '+YT)+'&ctz=Asia/Ho_Chi_Minh';
+}
+function notifyOn(){return store.getItem('vnx-notify')==='1'&&'Notification' in window&&Notification.permission==='granted'}
+function toggleNotify(btn){
+ if(!('Notification' in window)){toast('Điện thoại này chưa hỗ trợ thông báo – hãy dùng nhắc qua Lịch');return}
+ if(notifyOn()){store.setItem('vnx-notify','0');btn.classList.remove('on');return}
+ Notification.requestPermission().then(function(p){
+  if(p==='granted'){store.setItem('vnx-notify','1');btn.classList.add('on');showNote('🔔 Đã bật thông báo','App sẽ nhắc trước giờ kinh 5 phút khi đang mở.')}
+  else toast('Bạn chưa cho phép thông báo');
+ });
+}
+function showNote(title,body){
+ if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(function(r){r.showNotification(title,{body:body,icon:'icons/icon-192.png',badge:'icons/icon-192.png',data:{url:YT}})}).catch(function(){new Notification(title,{body:body})});
+ else new Notification(title,{body:body});
+}
+
+/* ---------- Trang Thêm ---------- */
+function more(){
+ var dark=d.documentElement.getAttribute('data-theme')==='dark';
+ view.innerHTML='<div class="install" id="installBar"><span>📲</span><div><b>Cài app VNXGroup</b>Mở nhanh từ màn hình chính</div><button id="installGo">Cài đặt</button></div>'+
+ '<div class="box"><h3>🔔 Nhắc Giờ Kinh Tối</h3><p>Nhận lời nhắc trước 19:45 mỗi tối để cả nhà cùng lần chuỗi.</p><div class="stack">'+
+  '<a class="btn red" href="'+gcal()+'" target="_blank" rel="noopener">📅 Thêm vào Lịch Google (Android)</a>'+
+  '<button class="btn" id="icsBtn">🍎 Thêm vào Lịch iPhone / máy khác</button></div>'+
+  '<div class="row" style="margin-top:8px"><em>🔔</em><span>Thông báo khi đang mở app</span><button class="sw'+(notifyOn()?' on':'')+'" id="ntSw" aria-label="Bật thông báo"></button></div></div>'+
+ '<div class="box"><h3>📂 Tất cả chuyên mục</h3><p>Chạm để xem bài theo chủ đề.</p><div class="tiles">'+CATS.map(tile).join('')+'</div></div>'+
+ '<div class="box"><h3>⚙️ Ứng dụng</h3>'+
+  '<div class="row"><em>🌙</em><span>Giao diện tối</span><button class="sw'+(dark?' on':'')+'" id="dkSw" aria-label="Giao diện tối"></button></div>'+
+  '<div class="row ios-tip"><em>📲</em><span style="font-weight:500;font-size:14px">Cài trên iPhone: mở bằng Safari, bấm nút <b>Chia sẻ ⬆</b> rồi chọn <b>“Thêm vào MH chính”</b>.</span></div></div>'+
+ '<div class="box"><h3>🤝 Kết nối</h3>'+
+  '<a class="row" href="tel:0901404453"><em>📞</em><span>Cùng hiệp thông: 0901.404.453</span>›</a>'+
+  '<a class="row" href="'+YT+'?sub_confirmation=1" target="_blank" rel="noopener"><em>▶️</em><span>Đăng ký kênh YouTube</span>›</a>'+
+  '<a class="row" href="https://www.facebook.com/VNX9Official" target="_blank" rel="noopener"><em>👍</em><span>Fanpage VNX9</span>›</a>'+
+  '<a class="row" href="https://www.facebook.com/Joseph.ngocxa" target="_blank" rel="noopener"><em>👤</em><span>Facebook Jos. Ngọc Xa</span>›</a>'+
+  '<a class="row" href="https://www.instagram.com/vnxgiokinhtoi" target="_blank" rel="noopener"><em>📷</em><span>Instagram</span>›</a>'+
+  '<a class="row" href="'+BLOG+'" target="_blank" rel="noopener"><em>🌐</em><span>Mở blog vnxgroup.blogspot.com</span>›</a></div>'+
+ '<div class="ver">VNXGroup v'+VER+'<br>Nguyện xin Thiên Chúa chúc lành cho công việc làm của chúng con.</div>';
+ $('icsBtn').onclick=addIcs;
+ $('ntSw').onclick=function(){toggleNotify(this)};
+ $('dkSw').onclick=function(){var on=d.documentElement.getAttribute('data-theme')!=='dark';setTheme(on?'dark':'light');this.classList.toggle('on',on)};
+ showInstall();
+}
+
+/* ---------- Cài đặt app ---------- */
+var deferred=null,isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent),standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+if(isIOS)d.documentElement.classList.add('ios');
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;showInstall()});
+window.addEventListener('appinstalled',function(){deferred=null;toast('🎉 Đã cài app VNXGroup');showInstall()});
+function showInstall(){
+ var bar=$('installBar');if(!bar)return;
+ if(standalone||(!deferred&&!isIOS)){bar.classList.remove('show');return}
+ bar.classList.add('show');
+ $('installGo').onclick=function(){
+  if(deferred){deferred.prompt();deferred.userChoice.then(function(){deferred=null;showInstall()})}
+  else toast('Bấm nút Chia sẻ ⬆ của Safari → “Thêm vào MH chính”');
+ };
+}
+
+/* ---------- Giao diện sáng / tối ---------- */
+function setTheme(t){d.documentElement.setAttribute('data-theme',t);store.setItem('vnx-theme',t);$('themeBtn').textContent=t==='dark'?'☀️':'🌙';
+ var m=d.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#0e1322':'#14234b'}
+setTheme(d.documentElement.getAttribute('data-theme')||'light');
+$('themeBtn').onclick=function(){setTheme(d.documentElement.getAttribute('data-theme')==='dark'?'light':'dark')};
+
+/* ---------- Đồng hồ giờ kinh ---------- */
+function tick(){
+ var now=vnNow(),start=new Date(now.getTime());start.setHours(19,45,0,0);
+ var end=new Date(start.getTime()+45*60000),live=now>=start&&now<end,target=now>=end?new Date(start.getTime()+86400000):start;
+ var diff=Math.max(0,target-now),h=Math.floor(diff/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+ $('abSub').textContent=live?'🔴 Đang phát Giờ Kinh Tối – mời tham dự!':DAYS[now.getDay()]+', '+fmt(now)+' · Giờ kinh 19:45';
+ /* nhắc khi đang mở app */
+ var key=fmt(now);
+ if(notifyOn()&&!live&&target===start&&diff<=5*60000&&store.getItem('vnx-noted')!==key){store.setItem('vnx-noted',key);showNote('🕯️ Sắp đến Giờ Kinh Tối','Còn 5 phút nữa – '+MYS[now.getDay()]+'. Chạm để tham dự.')}
+ var hr=$('hero');if(!hr)return;
+ hr.classList.toggle('live',live);
+ $('cdLabel').innerHTML=live?'<i class="dot"></i> Đang phát trực tiếp – mời bạn tham dự!':(target===start?'Giờ kinh tối nay bắt đầu sau':'Giờ kinh tối mai bắt đầu sau');
+ $('cdH').textContent=p2(live?0:h);$('cdM').textContent=p2(live?0:m);$('cdS').textContent=p2(live?0:s);
+ var day=(live?now:target).getDay();$('cdMys').textContent='📿 '+MYS[day]+' – '+DAYS[day];
+}
+setInterval(tick,1000);
+
+/* ---------- Điều hướng ---------- */
+function route(){
+ var h=location.hash.slice(1)||'/',parts=h.split('/'),a=parts[1]||'',b='';
+ try{b=decodeURIComponent(parts.slice(2).join('/'))}catch(e){b=parts.slice(2).join('/')}
+ var tab=a===''?'home':a==='label'?b:a==='more'?'more':'';
+ d.querySelectorAll('#tabbar a').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-tab').toLowerCase()===tab.toLowerCase())});
+ window.scrollTo(0,0);
+ if(a==='label'&&b)label(b);else if(a==='post'&&b)postView(b);else if(a==='search')search(b);else if(a==='more')more();else if(a==='today')today();else home();
+ tick();
+}
+window.addEventListener('hashchange',route);route();
+
+if('serviceWorker' in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
+window.addEventListener('offline',function(){toast('📶 Đang mất mạng – bài đã xem vẫn đọc được')});
+})();
+</script>
+</body>
+</html>

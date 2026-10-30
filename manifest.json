@@ -1,0 +1,23 @@
+{
+  "name": "VNXGroup – Giờ Kinh Tối Gia Đình",
+  "short_name": "VNXGroup",
+  "description": "Giờ kinh Mân Côi 19:45, Lời Chúa hằng ngày, truyện tích và tin Công Giáo từ VNXGroup.",
+  "lang": "vi",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14234b",
+  "theme_color": "#14234b",
+  "categories": ["lifestyle", "books", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Giờ kinh tối", "url": "./#/label/gi%E1%BB%9D%20kinh%20t%E1%BB%91i", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Lời Chúa hằng ngày", "url": "./#/label/l%E1%BB%9Di%20ch%C3%BAa%20h%E1%BA%B1ng%20ng%C3%A0y", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
