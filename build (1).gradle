@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+}
+
+def vc = Integer.parseInt(System.getenv("VERSION_CODE") ?: "1")
+
+android {
+    namespace 'com.vnxgroup.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.vnxgroup.app"
+        minSdk 23
+        targetSdk 34
+        versionCode vc
+        versionName "1.0." + vc
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("vnxgroup.keystore")
+            storePassword "vnxc3f3903cfd62b84c"
+            keyAlias "vnxgroup"
+            keyPassword "vnxc3f3903cfd62b84c"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
