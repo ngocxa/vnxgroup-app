@@ -3,7 +3,7 @@ name: Build Android APK
 on:
   push:
     paths:
-      - 'android/**'
+      - 'android.zip'
       - '.github/workflows/build-apk.yml'
   workflow_dispatch:
 
@@ -15,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Unzip Android project
+        run: |
+          rm -rf android
+          unzip -q -o android.zip
+          ls -R android | head -40
 
       - uses: actions/setup-java@v4
         with:
