@@ -7,8 +7,8 @@
 <meta name="description" content="Giờ kinh Mân Côi 19:45, Lời Chúa hằng ngày, truyện tích và tin Công Giáo.">
 <meta name="theme-color" content="#14234b">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -173,7 +173,7 @@ main{padding:16px 16px calc(96px + var(--sb))}
 <body>
 <div class="shell">
  <header class="appbar">
-  <img src="icons/icon-192.png" alt="VNXGroup">
+  <img src="icon-192.png" alt="VNXGroup">
   <div class="ab-t"><b>VNX<i>Group</i></b><small id="abSub">Kết nối đức tin – Lan tỏa yêu thương</small></div>
   <button class="ab-btn" id="getApp" aria-label="Cài app" style="display:none" onclick="">📲</button>
   <a class="ab-btn" href="#/search" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
@@ -373,7 +373,7 @@ function toggleNotify(btn){
  });
 }
 function showNote(title,body){
- if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(function(r){r.showNotification(title,{body:body,icon:'icons/icon-192.png',badge:'icons/icon-192.png',data:{url:YT}})}).catch(function(){new Notification(title,{body:body})});
+ if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(function(r){r.showNotification(title,{body:body,icon:'icon-192.png',badge:'icon-192.png',data:{url:YT}})}).catch(function(){new Notification(title,{body:body})});
  else new Notification(title,{body:body});
 }
 
@@ -450,7 +450,7 @@ function openGuide(){
  }
  var g=$('guide');
  if(!g){g=d.createElement('div');g.id='guide';g.className='guide';d.body.appendChild(g);g.addEventListener('click',function(e){if(e.target===g)closeGuide()})}
- g.innerHTML='<div class="g-sheet"><img src="icons/icon-192.png" alt=""><h3>'+t+'</h3>'+h+'<button class="btn" id="gClose">Đã hiểu</button></div>';
+ g.innerHTML='<div class="g-sheet"><img src="icon-192.png" alt=""><h3>'+t+'</h3>'+h+'<button class="btn" id="gClose">Đã hiểu</button></div>';
  $('gClose').onclick=closeGuide;
  var pw=$('gPwa');if(pw)pw.onclick=function(){if(deferred){deferred.prompt();deferred.userChoice.then(function(r){deferred=null;if(r&&r.outcome==='accepted')closeGuide()})}};
  var cp=$('gCopy');if(cp)cp.onclick=function(){var u=APPURL+'?install=1';if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){toast('✅ Đã chép link')});else prompt('Chép link này:',u)};
