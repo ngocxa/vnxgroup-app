@@ -155,6 +155,19 @@ main{padding:16px 16px calc(96px + var(--sb))}
 .install button{margin-left:auto;border:0;border-radius:12px;padding:9px 14px;background:var(--navy);color:#fff;font-weight:700;flex:none}
 .ios-tip{display:none}
 .ios .ios-tip{display:block}
+
+.guide{position:fixed;inset:0;z-index:80;background:rgba(10,15,30,.6);display:flex;align-items:flex-end;justify-content:center;opacity:0;visibility:hidden;transition:.25s}
+.guide.show{opacity:1;visibility:visible}
+.g-sheet{width:100%;max-width:520px;background:var(--card);border-radius:24px 24px 0 0;padding:22px 20px calc(20px + var(--sb));transform:translateY(40px);transition:.3s;display:flex;flex-direction:column;gap:12px;text-align:left}
+.guide.show .g-sheet{transform:none}
+.g-sheet img{width:72px;height:72px;align-self:center}
+.g-sheet h3{margin:0;text-align:center;font:800 21px var(--fh)}
+.g-sheet p{margin:0;font-size:15px}
+.g-steps{margin:0;padding:0;list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:10px}
+.g-steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.45;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:11px 12px}
+.g-steps li:before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1d05}
+.kbd{display:inline-block;padding:0 7px;border-radius:6px;border:1px solid var(--line);background:var(--card);font-weight:700}
+.g-note{color:var(--muted);font-size:13.5px !important}
 </style>
 </head>
 <body>
@@ -162,6 +175,7 @@ main{padding:16px 16px calc(96px + var(--sb))}
  <header class="appbar">
   <img src="icons/icon-192.png" alt="VNXGroup">
   <div class="ab-t"><b>VNX<i>Group</i></b><small id="abSub">Kết nối đức tin – Lan tỏa yêu thương</small></div>
+  <button class="ab-btn" id="getApp" aria-label="Cài app" style="display:none" onclick="">📲</button>
   <a class="ab-btn" href="#/search" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></a>
   <button class="ab-btn" id="themeBtn" aria-label="Sáng / tối">🌙</button>
  </header>
@@ -179,7 +193,7 @@ main{padding:16px 16px calc(96px + var(--sb))}
 <script>
 (function(){
 'use strict';
-var BLOG='https://vnxgroup.blogspot.com', YT='https://www.youtube.com/@vnxgroup', VER='1.0.0';
+var BLOG='https://vnxgroup.blogspot.com', YT='https://www.youtube.com/@vnxgroup', VER='1.1.0';
 var CATS=[
  {l:'giờ kinh tối',t:'Giờ kinh tối',e:'🕯️',d:'Kinh Mân Côi gia đình 19:45',c:['#312e81','#7c3aed']},
  {l:'lời chúa hằng ngày',t:'Lời Chúa hằng ngày',e:'📜',d:'Tin Mừng & lời cầu nguyện',c:['#92400e','#f59e0b']},
@@ -312,7 +326,8 @@ function postView(id){
   function fs(dv){size=Math.min(24,Math.max(14,size+dv));store.setItem('vnx-fs',size);var en=$('entry');if(en)en.style.fontSize=size+'px'}
   $('fsUp').onclick=function(){fs(1.5)};$('fsDown').onclick=function(){fs(-1.5)};
   $('shareBtn').onclick=function(){
-   if(navigator.share)navigator.share({title:p.title,url:p.url}).catch(function(){});
+   if(window.VNXNative&&VNXNative.share)VNXNative.share(p.title,p.url);
+   else if(navigator.share)navigator.share({title:p.title,url:p.url}).catch(function(){});
    else if(navigator.clipboard)navigator.clipboard.writeText(p.url).then(function(){toast('✅ Đã chép đường link bài viết')});
   };
  }
@@ -367,9 +382,10 @@ function more(){
  var dark=d.documentElement.getAttribute('data-theme')==='dark';
  view.innerHTML='<div class="install" id="installBar"><span>📲</span><div><b>Cài app VNXGroup</b>Mở nhanh từ màn hình chính</div><button id="installGo">Cài đặt</button></div>'+
  '<div class="box"><h3>🔔 Nhắc Giờ Kinh Tối</h3><p>Nhận lời nhắc trước 19:45 mỗi tối để cả nhà cùng lần chuỗi.</p><div class="stack">'+
+  (window.VNXNative?'</div><div class="row"><em>🔔</em><span>Nhắc lúc 19:35 mỗi tối</span><button class="sw'+(VNXNative.getReminder()?' on':'')+'" id="nvSw" aria-label="Nhắc giờ kinh"></button></div><button class="btn line" id="nvTest" style="width:100%;margin-top:8px">🔔 Thử thông báo</button></div>':
   '<a class="btn red" href="'+gcal()+'" target="_blank" rel="noopener">📅 Thêm vào Lịch Google (Android)</a>'+
   '<button class="btn" id="icsBtn">🍎 Thêm vào Lịch iPhone / máy khác</button></div>'+
-  '<div class="row" style="margin-top:8px"><em>🔔</em><span>Thông báo khi đang mở app</span><button class="sw'+(notifyOn()?' on':'')+'" id="ntSw" aria-label="Bật thông báo"></button></div></div>'+
+  '<div class="row" style="margin-top:8px"><em>🔔</em><span>Thông báo khi đang mở app</span><button class="sw'+(notifyOn()?' on':'')+'" id="ntSw" aria-label="Bật thông báo"></button></div></div>')+
  '<div class="box"><h3>📂 Tất cả chuyên mục</h3><p>Chạm để xem bài theo chủ đề.</p><div class="tiles">'+CATS.map(tile).join('')+'</div></div>'+
  '<div class="box"><h3>⚙️ Ứng dụng</h3>'+
   '<div class="row"><em>🌙</em><span>Giao diện tối</span><button class="sw'+(dark?' on':'')+'" id="dkSw" aria-label="Giao diện tối"></button></div>'+
@@ -382,26 +398,66 @@ function more(){
   '<a class="row" href="https://www.instagram.com/vnxgiokinhtoi" target="_blank" rel="noopener"><em>📷</em><span>Instagram</span>›</a>'+
   '<a class="row" href="'+BLOG+'" target="_blank" rel="noopener"><em>🌐</em><span>Mở blog vnxgroup.blogspot.com</span>›</a></div>'+
  '<div class="ver">VNXGroup v'+VER+'<br>Nguyện xin Thiên Chúa chúc lành cho công việc làm của chúng con.</div>';
- $('icsBtn').onclick=addIcs;
- $('ntSw').onclick=function(){toggleNotify(this)};
+ if(window.VNXNative){
+  $('nvSw').onclick=function(){var on=!this.classList.contains('on');VNXNative.setReminder(on);this.classList.toggle('on',on);toast(on?'🔔 Đã bật nhắc giờ kinh 19:35 mỗi tối':'Đã tắt nhắc giờ kinh')};
+  $('nvTest').onclick=function(){VNXNative.testReminder();toast('Đã gửi thông báo thử – nếu không thấy, hãy cho phép thông báo cho app VNXGroup')};
+ }else{
+  $('icsBtn').onclick=addIcs;
+  $('ntSw').onclick=function(){toggleNotify(this)};
+ }
  $('dkSw').onclick=function(){var on=d.documentElement.getAttribute('data-theme')!=='dark';setTheme(on?'dark':'light');this.classList.toggle('on',on)};
  showInstall();
 }
 
 /* ---------- Cài đặt app ---------- */
-var deferred=null,isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent),standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+var ua=navigator.userAgent,deferred=null,isIOS=/iphone|ipad|ipod/i.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1),isAndroid=/android/i.test(ua),
+ inApp=/FBAN|FBAV|FB_IAB|FBIOS|Instagram|Zalo|Line\/|Messenger|TikTok|musical_ly|; wv\)/i.test(ua),isSamsung=/SamsungBrowser/i.test(ua),iosOther=isIOS&&/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua),
+ isNative=/VNXGroupApp/.test(ua)||!!window.VNXNative,
+ standalone=isNative||window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true,APPURL=location.origin+location.pathname,APK='https://github.com/ngocxa/vnxgroup-app/releases/latest/download/VNXGroup.apk';
+if(isNative)inApp=false;
 if(isIOS)d.documentElement.classList.add('ios');
-window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;showInstall()});
-window.addEventListener('appinstalled',function(){deferred=null;toast('🎉 Đã cài app VNXGroup');showInstall()});
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;showInstall();var g=$('guide');if(g&&g.classList.contains('show'))openGuide()});
+window.addEventListener('appinstalled',function(){deferred=null;closeGuide();toast('🎉 Đã cài app VNXGroup – xem biểu tượng trên màn hình chính');showInstall()});
 function showInstall(){
+ var gb=$('getApp');if(gb){gb.style.display=standalone?'none':'grid';gb.onclick=openGuide}
  var bar=$('installBar');if(!bar)return;
- if(standalone||(!deferred&&!isIOS)){bar.classList.remove('show');return}
- bar.classList.add('show');
- $('installGo').onclick=function(){
-  if(deferred){deferred.prompt();deferred.userChoice.then(function(){deferred=null;showInstall()})}
-  else toast('Bấm nút Chia sẻ ⬆ của Safari → “Thêm vào MH chính”');
- };
+ bar.classList.toggle('show',!standalone);
+ $('installGo').onclick=openGuide;
 }
+function steps(a){return '<ol class="g-steps">'+a.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ol>'}
+function openGuide(){
+ if(deferred&&!isAndroid){deferred.prompt();deferred.userChoice.then(function(r){deferred=null;if(r&&r.outcome==='accepted')closeGuide()});return}
+ var h='',t='📲 Cài app VNXGroup';
+ if(inApp){
+  t='⚠️ Hãy mở bằng trình duyệt';
+  h='<p>Bạn đang xem trong <b>Facebook / Zalo / Messenger</b> nên chưa cài app được. Hãy mở link này bằng '+(isIOS?'<b>Safari</b>':'<b>Chrome</b>')+':</p>'+
+   (isAndroid?'<a class="btn red" href="intent://'+APPURL.replace(/^https?:\/\//,'')+'?install=1#Intent;scheme=https;package=com.android.chrome;end">🌐 Mở bằng Chrome</a>':'')+
+   steps(['Bấm nút <b>⋮</b> hoặc <b>···</b> ở góc trên màn hình','Chọn <b>“Mở bằng trình duyệt”</b> / <b>“Mở trong '+(isIOS?'Safari':'Chrome')+'”</b>','Sau đó làm theo hướng dẫn cài app hiện ra'])+
+   '<button class="btn line" id="gCopy">🔗 Chép link app</button>';
+ }else if(isIOS&&iosOther){
+  h='<p>Trên iPhone, cách chắc chắn nhất là mở link bằng <b>Safari</b>.</p>'+steps(['Bấm <b>Chép link</b> bên dưới','Mở <b>Safari</b>, dán link vào ô địa chỉ','Bấm nút <b>Chia sẻ ⬆</b> → <b>“Thêm vào MH chính”</b>'])+'<button class="btn line" id="gCopy">🔗 Chép link app</button>';
+ }else if(isIOS){
+  h=steps(['Bấm nút <b>Chia sẻ</b> <span class="kbd">⬆</span> ở thanh dưới cùng của Safari','Kéo xuống, chọn <b>“Thêm vào MH chính”</b> <span class="kbd">⊞</span>','Bấm <b>Thêm</b> ở góc phải trên'])+'<p class="g-note">Biểu tượng VNXGroup sẽ xuất hiện trên màn hình chính như một app.</p>';
+ }else if(isSamsung){
+  h=steps(['Bấm nút <b>≡</b> ở góc dưới bên phải','Chọn <b>“Thêm trang vào”</b>','Chọn <b>“Màn hình chính”</b> → <b>Thêm</b>']);
+ }else if(isAndroid){
+  h='<a class="btn red" href="'+APK+'">⬇️ Tải app VNXGroup cho Android</a>'+
+   steps(['Bấm nút đỏ ở trên, đợi tải xong rồi bấm <b>Mở</b> file <b>VNXGroup.apk</b>','Nếu máy hỏi, chọn <b>Cài đặt</b> → <b>Cho phép từ nguồn này</b>, rồi quay lại','Bấm <b>Cài đặt</b> – biểu tượng logo VNX hiện trên màn hình chính'])+
+   '<p class="g-note">Máy có thể cảnh báo “ứng dụng không rõ nguồn” vì app chưa đăng trên Google Play – bấm <b>Vẫn cài đặt</b>.</p>'+
+   (deferred?'<button class="btn line" id="gPwa">⚡ Hoặc cài nhanh bản web (không cần tải file)</button>':'');
+ }else{
+  h='<p>Trên máy tính dùng Chrome/Edge: bấm biểu tượng <b>Cài đặt ⊕</b> ở cuối thanh địa chỉ.</p><p>Để cài lên điện thoại, mở link này trên điện thoại:</p><button class="btn line" id="gCopy">🔗 Chép link app</button>';
+ }
+ var g=$('guide');
+ if(!g){g=d.createElement('div');g.id='guide';g.className='guide';d.body.appendChild(g);g.addEventListener('click',function(e){if(e.target===g)closeGuide()})}
+ g.innerHTML='<div class="g-sheet"><img src="icons/icon-192.png" alt=""><h3>'+t+'</h3>'+h+'<button class="btn" id="gClose">Đã hiểu</button></div>';
+ $('gClose').onclick=closeGuide;
+ var pw=$('gPwa');if(pw)pw.onclick=function(){if(deferred){deferred.prompt();deferred.userChoice.then(function(r){deferred=null;if(r&&r.outcome==='accepted')closeGuide()})}};
+ var cp=$('gCopy');if(cp)cp.onclick=function(){var u=APPURL+'?install=1';if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){toast('✅ Đã chép link')});else prompt('Chép link này:',u)};
+ requestAnimationFrame(function(){g.classList.add('show')});
+}
+function closeGuide(){var g=$('guide');if(g)g.classList.remove('show')}
+if(!standalone&&/[?&]install=1/.test(location.search))setTimeout(openGuide,1200);
 
 /* ---------- Giao diện sáng / tối ---------- */
 function setTheme(t){d.documentElement.setAttribute('data-theme',t);store.setItem('vnx-theme',t);$('themeBtn').textContent=t==='dark'?'☀️':'🌙';

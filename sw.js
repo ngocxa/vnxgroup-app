@@ -1,5 +1,5 @@
 /* VNXGroup app – service worker */
-const V = 'vnx-v2';
+const V = 'vnx-v4';
 const SHELL = ['./', './index.html', './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {

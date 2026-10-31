@@ -1,24 +1,40 @@
-APP VNXGROUP – HƯỚNG DẪN ĐƯA LÊN MẠNG (miễn phí, khoảng 10 phút)
+APP VNXGROUP – HƯỚNG DẪN TẠO FILE CÀI ĐẶT ANDROID (.APK)
 
-1. Vào https://github.com, tạo tài khoản (nếu chưa có).
-2. Bấm dấu "+" (góc phải trên) > New repository.
-   - Repository name: vnxgroup-app
-   - Chọn Public > bấm Create repository.
-3. Bấm "uploading an existing file", kéo thả TOÀN BỘ nội dung thư mục app
-   (index.html, manifest.json, sw.js và thư mục icons) > bấm Commit changes.
-4. Vào Settings > Pages:
-   - Source: Deploy from a branch
-   - Branch: main, thư mục / (root) > Save.
-5. Đợi 1–2 phút, app chạy tại: https://<tên-github-của-bạn>.github.io/vnxgroup-app/
+A. TẢI MÃ NGUỒN LÊN GITHUB (kho vnxgroup-app)
+1. Giải nén file vnxgroup-app.zip.
+2. Vào https://github.com/ngocxa/vnxgroup-app > Add file > Upload files.
+3. Kéo thả: index.html, manifest.json, sw.js, HUONG-DAN.txt, thư mục icons
+   và thư mục android > bấm Commit changes.
 
-CÀI APP LÊN ĐIỆN THOẠI
-- Android (Chrome): mở link app > bấm nút "Cài đặt" trong app (hoặc menu ⋮ > Cài đặt ứng dụng).
-- iPhone (Safari): mở link app > nút Chia sẻ ⬆ > "Thêm vào MH chính".
+B. TẠO "MÁY ĐÓNG GÓI" (chỉ làm 1 lần)
+1. Trong kho, bấm Add file > Create new file.
+2. Ô tên file gõ đúng:   .github/workflows/build-apk.yml
+3. Mở file build-apk.yml (trong thư mục .github/workflows đã giải nén),
+   chép toàn bộ nội dung, dán vào ô soạn thảo > bấm Commit changes.
+   (Thư mục .github là thư mục ẩn; nếu không thấy, bật "Hiện tệp ẩn".)
 
-NHẮC GIỜ KINH 19:45
-- Trong app: tab "Thêm" > "Thêm vào Lịch Google" (Android) hoặc "Thêm vào Lịch iPhone".
-  Điện thoại sẽ báo trước 10 phút mỗi tối, kể cả khi không mở app.
+C. LẤY FILE APK
+1. Bấm tab Actions > sẽ thấy "Build Android APK" đang chạy (vòng vàng).
+   Nếu GitHub hỏi, bấm "I understand my workflows, go ahead and enable them".
+   Nếu chưa chạy: chọn Build Android APK > Run workflow > Run workflow.
+2. Đợi khoảng 3–5 phút đến khi hiện dấu tích xanh ✓.
+3. Link tải app (cố định, gửi cho mọi người):
+   https://github.com/ngocxa/vnxgroup-app/releases/latest/download/VNXGroup.apk
 
-CẬP NHẬT APP VỀ SAU
-- Sửa file rồi tải lại lên GitHub. Nếu sửa nhiều, đổi dòng  const V = 'vnx-v1'
-  trong sw.js thành 'vnx-v2' để điện thoại tải bản mới.
+D. CÀI APP TRÊN ĐIỆN THOẠI ANDROID
+- Mở link trên bằng Chrome > Tải xuống > Mở file VNXGroup.apk.
+- Máy hỏi "Cho phép cài từ nguồn này" > bật > quay lại > Cài đặt.
+- Nếu Play Protect cảnh báo: chọn "Chi tiết khác" > "Vẫn cài đặt".
+- Biểu tượng logo VNX xuất hiện trên màn hình chính như mọi app khác.
+- Lần đầu mở app, bấm "Cho phép" thông báo để được nhắc giờ kinh 19:35.
+
+E. CẬP NHẬT
+- Nội dung app (bài viết, giao diện) lấy trực tiếp từ web nên tự cập nhật,
+  KHÔNG cần cài lại.
+- Chỉ khi sửa thư mục android, GitHub sẽ tự đóng gói bản APK mới.
+
+iPhone: Apple không cho cài file ngoài App Store, nên trên iPhone dùng
+cách "Thêm vào MH chính" trong Safari (app vẫn có biểu tượng logo VNX).
+
+LƯU Ý: Giữ nguyên file android/app/vnxgroup.keystore (khóa ký app).
+Mất file này thì các bản cập nhật sau sẽ không cài đè lên bản cũ được.
