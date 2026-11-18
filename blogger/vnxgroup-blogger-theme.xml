@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<!--
+  VNXGroup Software – Giao diện Blogger
+  Dùng để giới thiệu sản phẩm phần mềm và đăng bài viết về phần mềm.
+  Quy ước nhãn (Label):
+    "Sản phẩm"  -> bài giới thiệu phần mềm (hiện ở lưới Sản phẩm trên trang chủ)
+    "Bài viết"  -> bài hướng dẫn, chia sẻ kiến thức
+  Muốn đổi tên nhãn: sửa biến VNX_CONFIG ở cuối file và chữ "Sản phẩm" trong 2 chỗ b:if bên dưới.
+-->
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <meta content='#14234b' name='theme-color'/>
+  <title><b:if cond='data:view.isHomepage'><data:blog.title.escaped/><b:else/><data:view.title.escaped/> | <data:blog.title.escaped/></b:if></title>
+  <b:include data='blog' name='all-head-content'/>
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap' rel='stylesheet'/>
+  <b:skin><![CDATA[
+/* ===== VNXGroup Software theme ===== */
+:root{
+  --navy:#14234b; --navy-2:#1f3a7a; --accent:#f2a516; --accent-2:#ffcf5c;
+  --bg:#f5f7fb; --card:#ffffff; --text:#1b2333; --muted:#5d6b85; --line:#e3e8f2;
+  --radius:14px; --shadow:0 6px 24px rgba(20,35,75,.08);
+  --font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'JetBrains Mono',Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--navy-2);text-decoration:none}
+a:hover{color:var(--accent)}
+img{max-width:100%;height:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.section,.widget{margin:0}
+
+/* ----- Header ----- */
+.site-header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand .widget{margin:0}
+.brand h1,.brand .title{margin:0;font-size:22px;font-weight:800;letter-spacing:-.3px;line-height:1.2}
+.brand a{color:#fff}
+.brand a:hover{color:var(--accent-2)}
+.brand p,.brand .description{display:none}
+.brand img{max-height:44px;width:auto;display:block}
+.nav-toggle{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;padding:6px}
+.main-nav .widget h3,.main-nav .widget .title{display:none}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+.main-nav li a{display:block;color:#dfe6f7;padding:8px 14px;border-radius:999px;font-weight:600;font-size:15px}
+.main-nav li a:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* ----- Hero ----- */
+.hero{background:radial-gradient(1200px 400px at 85% -10%,#2c4fa3 0%,transparent 60%),linear-gradient(135deg,var(--navy) 0%,#0e1836 100%);color:#fff;padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero .kicker{display:inline-block;background:rgba(242,165,22,.15);color:var(--accent-2);border:1px solid rgba(242,165,22,.4);padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:16px}
+.hero h2{font-size:42px;line-height:1.15;margin:0 0 16px;font-weight:800;letter-spacing:-.8px}
+.hero h2 span{color:var(--accent)}
+.hero p{color:#c7d2ea;font-size:18px;margin:0 0 28px;max-width:560px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;font-family:var(--mono);font-size:14px;color:#cfe0ff;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.hero-art .dots{display:flex;gap:6px;margin-bottom:14px}
+.hero-art .dots i{width:11px;height:11px;border-radius:50%;background:#ff5f57;display:block}
+.hero-art .dots i:nth-child(2){background:#febc2e}.hero-art .dots i:nth-child(3){background:#28c840}
+.hero-art .k{color:var(--accent-2)}.hero-art .s{color:#8ee6a8}.hero-art .c{color:#7f8db0}
+
+/* ----- Buttons ----- */
+.btn,.vnx-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit;line-height:1.2}
+.btn:hover,.vnx-btn:hover{transform:translateY(-2px)}
+.btn-primary,.vnx-btn{background:var(--accent);color:#1b1300 !important}
+.btn-primary:hover,.vnx-btn:hover{box-shadow:0 8px 20px rgba(242,165,22,.35);color:#1b1300}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+.btn-outline,.vnx-btn.outline{background:transparent;border-color:var(--navy-2);color:var(--navy-2) !important}
+
+/* ----- Layout ----- */
+.content{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;padding:40px 16px 56px}
+.block-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 18px}
+.block-head h2{font-size:24px;margin:0;font-weight:800;color:var(--navy)}
+.block-head h2::after{content:"";display:block;width:44px;height:4px;background:var(--accent);border-radius:4px;margin-top:6px}
+.block-head a{font-weight:600;font-size:14px}
+.products-block{margin-bottom:40px}
+.status-msg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;color:var(--muted)}
+.status-msg b{color:var(--navy)}
+
+/* ----- Cards ----- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;border:1px solid var(--line)}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(20,35,75,.14)}
+.card-thumb{position:relative;display:block;aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy),var(--navy-2));overflow:hidden}
+.card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:44px;font-weight:800}
+.badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#1b1300;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.card-labels{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{font-size:12px;font-weight:600;background:#eef2fb;color:var(--navy-2);padding:2px 10px;border-radius:999px}
+.chip:hover{background:var(--navy);color:#fff}
+.card-title{font-size:18px;line-height:1.4;margin:0 0 8px;font-weight:700}
+.card-title a{color:var(--text)}
+.card-title a:hover{color:var(--navy-2)}
+.card-snip{color:var(--muted);font-size:14.5px;margin:0 0 14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-meta{margin-top:auto;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.card-meta .more{font-weight:700}
+.skeleton{height:280px;background:linear-gradient(90deg,#e9edf5 0,#f6f8fc 50%,#e9edf5 100%);background-size:200% 100%;animation:sk 1.2s infinite;border-radius:var(--radius)}
+@keyframes sk{to{background-position:-200% 0}}
+
+/* ----- Pager ----- */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:32px}
+.pager .btn{background:var(--card);border:1px solid var(--line);color:var(--navy)}
+.pager .btn:hover{border-color:var(--navy);color:var(--navy)}
+
+/* ----- Single post ----- */
+.post{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line);padding:32px 36px}
+.crumbs{font-size:14px;color:var(--muted);margin-bottom:10px}
+.crumbs a{color:var(--muted)}
+.post-title{font-size:34px;line-height:1.25;margin:0 0 14px;color:var(--navy);font-weight:800;letter-spacing:-.5px}
+.post-meta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:14px;color:var(--muted);padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.post-body{font-size:17px;overflow-wrap:break-word}
+.post-body h2{font-size:26px;color:var(--navy);margin:36px 0 12px;line-height:1.3}
+.post-body h3{font-size:21px;color:var(--navy);margin:28px 0 10px}
+.post-body img{border-radius:10px}
+.post-body blockquote{margin:20px 0;padding:14px 20px;background:#fff8e8;border-left:4px solid var(--accent);border-radius:0 10px 10px 0}
+.post-body table{border-collapse:collapse;width:100%;margin:18px 0;font-size:15px;display:block;overflow-x:auto}
+.post-body th,.post-body td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+.post-body th{background:#eef2fb;color:var(--navy)}
+.post-body code{font-family:var(--mono);font-size:.88em;background:#eef2fb;color:#b4245a;padding:2px 6px;border-radius:5px}
+.post-body pre{position:relative;background:#0f1730;color:#dbe4ff;padding:18px 20px;border-radius:12px;overflow:auto;font-size:14px;line-height:1.6}
+.post-body pre code{background:none;color:inherit;padding:0;font-size:inherit}
+.copy-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:6px;font-size:12px;padding:3px 10px;cursor:pointer;font-family:var(--font)}
+.copy-btn:hover{background:rgba(255,255,255,.2)}
+.post-labels{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0}
+.share{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);font-weight:600;color:var(--muted);font-size:14px}
+.share a{padding:7px 14px;border-radius:8px;color:#fff;font-size:14px}
+.share .fb{background:#1877f2}.share .zl{background:#0068ff}.share .cp{background:var(--navy);cursor:pointer}
+
+/* Hộp thông tin phần mềm (dùng trong bài viết) */
+.vnx-app{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;background:linear-gradient(135deg,#f7f9ff,#eef3ff);border:1px solid #d9e2f7;border-radius:16px;padding:22px;margin:0 0 28px}
+.vnx-app .vnx-icon{width:120px;height:120px;border-radius:26px;object-fit:cover;box-shadow:0 8px 20px rgba(20,35,75,.18);background:#fff}
+.vnx-app h2{margin:0 0 6px !important;font-size:24px !important}
+.vnx-app p{margin:0 0 12px;color:var(--muted)}
+.vnx-specs{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--text);margin-bottom:14px}
+.vnx-specs b{color:var(--navy)}
+.vnx-actions{display:flex;gap:10px;flex-wrap:wrap}
+.vnx-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0;padding:0;list-style:none}
+.vnx-features li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.vnx-features li b{display:block;color:var(--navy);margin-bottom:2px}
+.vnx-shots{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+.vnx-shots img{height:360px;width:auto;scroll-snap-align:start;border:1px solid var(--line)}
+.vnx-note{background:#eefaf2;border:1px solid #bfe8cc;border-radius:12px;padding:12px 16px;font-size:15px}
+
+/* Bài liên quan + bình luận */
+.related{margin-top:32px}
+.related h3{font-size:20px;color:var(--navy);margin:0 0 14px}
+.related .grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.related .card-title{font-size:15px}
+.comments-wrap{margin-top:28px;background:var(--card);border-radius:var(--radius);border:1px solid var(--line);padding:24px 28px}
+.comments h3,.comments h4{color:var(--navy)}
+
+/* ----- Sidebar ----- */
+.sidebar .widget{background:var(--card);border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);padding:20px 22px;margin-bottom:22px}
+.sidebar .widget h3.title,.sidebar .widget h2.title,.sidebar .widget > h3,.sidebar .widget > h2{font-size:17px;margin:0 0 14px;color:var(--navy);font-weight:800}
+.sidebar ul{list-style:none;margin:0;padding:0}
+.sidebar li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.sidebar li:last-child{border-bottom:0}
+.sidebar .Label ul{display:flex;flex-wrap:wrap;gap:8px}
+.sidebar .Label li{border:0;padding:0}
+.sidebar .Label li a{display:inline-block;background:#eef2fb;padding:4px 12px;border-radius:999px;font-size:14px;font-weight:600}
+.sidebar .Label .label-count{color:var(--muted);font-size:12px}
+.sidebar .BlogSearch form{display:flex;gap:8px}
+.sidebar .BlogSearch input[type=text],.sidebar .BlogSearch input[type=search]{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit}
+.sidebar .BlogSearch input[type=submit],.sidebar .BlogSearch button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:0 16px;font:inherit;font-weight:600;cursor:pointer}
+.sidebar .PopularPosts .post{padding:0;box-shadow:none;border:0;border-bottom:1px dashed var(--line);border-radius:0;padding-bottom:12px;margin-bottom:12px}
+.sidebar .PopularPosts .post:last-child{border:0;margin:0;padding:0}
+.sidebar .PopularPosts h3{font-size:15px;margin:0 0 4px;line-height:1.4}
+.sidebar .PopularPosts img{border-radius:8px}
+.sidebar .PopularPosts .snippet-item,.sidebar .PopularPosts .item-snippet{font-size:13px;color:var(--muted)}
+.author-box{text-align:center}
+.author-box .ava{width:84px;height:84px;border-radius:50%;margin:0 auto 10px;background:var(--navy);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px}
+.author-box p{color:var(--muted);font-size:14.5px;margin:6px 0 14px}
+.social{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.social a{padding:7px 14px;border-radius:8px;color:#fff !important;font-weight:600;font-size:14px}
+.social .yt{background:#ff0000}.social .fb{background:#1877f2}
+
+/* ----- Footer ----- */
+.site-footer{background:#0e1836;color:#aab6d3;padding:36px 0;font-size:14px}
+.site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.site-footer a{color:#dfe6f7}
+.site-footer a:hover{color:var(--accent)}
+.to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#1b1300;border:0;font-size:20px;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s}
+.to-top.show{opacity:1;pointer-events:auto}
+
+/* ----- Responsive ----- */
+@media (max-width:960px){
+  .content{grid-template-columns:1fr}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{display:none}
+}
+@media (max-width:720px){
+  .nav-toggle{display:block}
+  .main-nav{position:absolute;left:0;right:0;top:64px;background:var(--navy);padding:8px 16px 16px;display:none;box-shadow:0 10px 20px rgba(0,0,0,.2)}
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column}
+  .hero{padding:44px 0 52px}
+  .hero h2{font-size:30px}
+  .hero p{font-size:16px}
+  .post{padding:22px 18px}
+  .post-title{font-size:26px}
+  .vnx-app{grid-template-columns:1fr;text-align:center}
+  .vnx-app .vnx-icon{margin:0 auto}
+  .vnx-specs,.vnx-actions{justify-content:center}
+  .vnx-shots img{height:280px}
+  .comments-wrap{padding:18px}
+}
+  ]]></b:skin>
+</head>
+
+<body expr:class='data:view.isSingleItem ? "is-item" : "is-list"'>
+
+<!-- ===== HEADER ===== -->
+<header class='site-header'>
+  <div class='wrap'>
+    <b:section class='brand' id='header' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Header1' locked='true' title='VNXGroup Software (Tiêu đề)' type='Header' version='2' visible='true'/>
+    </b:section>
+    <button aria-label='Mở menu' class='nav-toggle' id='navToggle' type='button'>&#9776;</button>
+    <b:section class='main-nav' id='nav' maxwidgets='1' showaddelement='no'>
+      <b:widget id='LinkList1' locked='false' title='Menu chính' type='LinkList' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>NONE</b:widget-setting>
+          <b:widget-setting name='text-0'>Trang chủ</b:widget-setting>
+          <b:widget-setting name='link-0'>/</b:widget-setting>
+          <b:widget-setting name='text-1'>Sản phẩm</b:widget-setting>
+          <b:widget-setting name='link-1'>/search/label/S%E1%BA%A3n%20ph%E1%BA%A9m</b:widget-setting>
+          <b:widget-setting name='text-2'>Bài viết</b:widget-setting>
+          <b:widget-setting name='link-2'>/search/label/B%C3%A0i%20vi%E1%BA%BFt</b:widget-setting>
+          <b:widget-setting name='text-3'>Giới thiệu</b:widget-setting>
+          <b:widget-setting name='link-3'>/p/gioi-thieu.html</b:widget-setting>
+          <b:widget-setting name='text-4'>Liên hệ</b:widget-setting>
+          <b:widget-setting name='link-4'>/p/lien-he.html</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+</header>
+
+<!-- ===== HERO (chỉ trang chủ) ===== -->
+<b:if cond='data:view.isHomepage'>
+<section class='hero'>
+  <div class='wrap'>
+    <div>
+      <span class='kicker'>Phần mềm miễn phí cho công việc văn phòng</span>
+      <h2>Công cụ nhỏ, <span>giải quyết việc lớn</span></h2>
+      <p>Nơi chia sẻ các phần mềm do VNXGroup tự phát triển – bảng lương, quản lý tài sản, ứng dụng di động – cùng các bài hướng dẫn sử dụng và kinh nghiệm tin học thực tế.</p>
+      <div class='hero-actions'>
+        <a class='btn btn-primary' expr:href='data:blog.homepageUrl + &quot;search/label/S%E1%BA%A3n%20ph%E1%BA%A9m&quot;'>&#11015; Xem sản phẩm</a>
+        <a class='btn btn-ghost' expr:href='data:blog.homepageUrl + &quot;search/label/B%C3%A0i%20vi%E1%BA%BFt&quot;'>Đọc bài viết</a>
+      </div>
+    </div>
+    <div class='hero-art' aria-hidden='true'>
+      <div class='dots'><i>&#160;</i><i>&#160;</i><i>&#160;</i></div>
+      <div><span class='c'>// vnxgroup.app</span></div>
+      <div><span class='k'>const</span> sanPham = [</div>
+      <div>&#160;&#160;<span class='s'>"Bảng lương viên chức"</span>,</div>
+      <div>&#160;&#160;<span class='s'>"Quản lý tài sản"</span>,</div>
+      <div>&#160;&#160;<span class='s'>"App Giờ Kinh Tối"</span></div>
+      <div>];</div>
+      <div><span class='k'>export default</span> sanPham;</div>
+    </div>
+  </div>
+</section>
+</b:if>
+
+<!-- ===== NỘI DUNG ===== -->
+<div class='wrap content'>
+  <main id='main-content'>
+
+    <b:if cond='data:view.isHomepage'>
+      <section class='products-block'>
+        <div class='block-head'>
+          <h2>Sản phẩm phần mềm</h2>
+          <a expr:href='data:blog.homepageUrl + &quot;search/label/S%E1%BA%A3n%20ph%E1%BA%A9m&quot;'>Xem tất cả &#8594;</a>
+        </div>
+        <div class='grid' id='vnx-products'>
+          <div class='skeleton'>&#160;</div><div class='skeleton'>&#160;</div><div class='skeleton'>&#160;</div>
+        </div>
+      </section>
+    </b:if>
+
+    <b:section class='main' id='main' showaddelement='no'>
+      <b:widget id='Blog1' locked='true' title='Bài đăng trên Blog' type='Blog' version='2' visible='true'>
+        <b:includable id='main' var='this'>
+
+          <!-- Danh sách bài -->
+          <b:if cond='data:view.isMultipleItems'>
+            <b:if cond='data:view.isLabelSearch'>
+              <div class='status-msg'>Đang xem nhãn: <b><data:view.search.label/></b> · <a expr:href='data:blog.homepageUrl'>Xem tất cả</a></div>
+            <b:elseif cond='data:view.isSearch and data:view.search.query'/>
+              <div class='status-msg'>Kết quả tìm kiếm cho: <b><data:view.search.query/></b></div>
+            </b:if>
+
+            <div class='block-head'>
+              <h2><b:if cond='data:view.isLabelSearch'><data:view.search.label/><b:else/>Mới cập nhật</b:if></h2>
+            </div>
+
+            <b:if cond='data:posts.empty'>
+              <div class='status-msg'>Chưa có bài viết nào ở mục này.</div>
+            <b:else/>
+              <div class='grid'>
+                <b:loop values='data:posts' var='post'>
+                  <article class='card'>
+                    <a class='card-thumb' expr:href='data:post.url' expr:title='data:post.title'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img expr:alt='data:post.title' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 640, &quot;16:9&quot;) : data:post.featuredImage' loading='lazy'/>
+                      <b:else/>
+                        <span class='thumb-ph'>VNX</span>
+                      </b:if>
+                      <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Sản phẩm&quot;)'>
+                        <span class='badge'>Phần mềm</span>
+                      </b:if>
+                    </a>
+                    <div class='card-body'>
+                      <b:if cond='data:post.labels'>
+                        <div class='card-labels'>
+                          <b:loop values='data:post.labels take 2' var='label'>
+                            <a class='chip' expr:href='data:label.url'><data:label.name/></a>
+                          </b:loop>
+                        </div>
+                      </b:if>
+                      <h2 class='card-title'><a expr:href='data:post.url'><data:post.title/></a></h2>
+                      <p class='card-snip'><data:post.snippets.short/></p>
+                      <div class='card-meta'>
+                        <time expr:datetime='data:post.date.iso8601'><data:post.date/></time>
+                        <a class='more' expr:href='data:post.url'>Xem chi tiết &#8594;</a>
+                      </div>
+                    </div>
+                  </article>
+                </b:loop>
+              </div>
+            </b:if>
+
+            <div class='pager'>
+              <span><b:if cond='data:newerPageUrl'><a class='btn' expr:href='data:newerPageUrl'>&#8592; Mới hơn</a></b:if></span>
+              <span><b:if cond='data:olderPageUrl'><a class='btn' expr:href='data:olderPageUrl'>Cũ hơn &#8594;</a></b:if></span>
+            </div>
+          </b:if>
+
+          <!-- Trang chi tiết bài / trang tĩnh -->
+          <b:if cond='data:view.isSingleItem'>
+            <b:loop values='data:posts' var='post'>
+              <article class='post' itemscope='itemscope' itemtype='https://schema.org/BlogPosting'>
+                <b:if cond='data:view.isPost'>
+                  <nav class='crumbs'>
+                    <a expr:href='data:blog.homepageUrl'>Trang chủ</a>
+                    <b:if cond='data:post.labels'> &#8250; <a expr:href='data:post.labels.first.url'><data:post.labels.first.name/></a></b:if>
+                  </nav>
+                </b:if>
+                <h1 class='post-title' itemprop='headline'><data:post.title/></h1>
+                <b:if cond='data:view.isPost'>
+                  <div class='post-meta'>
+                    <span>&#9998; <data:post.author.name/></span>
+                    <time expr:datetime='data:post.date.iso8601' itemprop='datePublished'>&#128197; <data:post.date/></time>
+                    <b:if cond='data:post.numberOfComments'><span>&#128172; <data:post.numberOfComments/> bình luận</span></b:if>
+                  </div>
+                </b:if>
+
+                <div class='post-body' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='articleBody'>
+                  <data:post.body/>
+                </div>
+
+                <b:if cond='data:view.isPost'>
+                  <b:if cond='data:post.labels'>
+                    <div class='post-labels'>
+                      <b:loop values='data:post.labels' var='label'>
+                        <a class='chip' expr:href='data:label.url'>#<data:label.name/></a>
+                      </b:loop>
+                    </div>
+                  </b:if>
+                  <div class='share'>
+                    Chia sẻ:
+                    <a class='fb' expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url.canonical' rel='noopener' target='_blank'>Facebook</a>
+                    <a class='zl' expr:href='&quot;https://sp.zalo.me/share_inline?d=&quot; + data:post.url.canonical' rel='noopener' target='_blank'>Zalo</a>
+                    <a class='cp' expr:data-url='data:post.url.canonical' id='copyLink'>Sao chép link</a>
+                  </div>
+                </b:if>
+              </article>
+
+              <b:if cond='data:view.isPost'>
+                <b:if cond='data:post.labels'>
+                  <section class='related' expr:data-label='data:post.labels.first.name' expr:data-url='data:post.url.canonical' id='vnx-related'>
+                    <h3>Có thể bạn quan tâm</h3>
+                    <div class='grid'>&#160;</div>
+                  </section>
+                </b:if>
+                <div class='comments-wrap'>
+                  <b:include data='post' name='commentPicker'/>
+                </div>
+              </b:if>
+            </b:loop>
+
+            <b:if cond='data:view.isPost'>
+              <div class='pager'>
+                <span><b:if cond='data:newerPageUrl'><a class='btn' expr:href='data:newerPageUrl'>&#8592; Bài mới hơn</a></b:if></span>
+                <span><b:if cond='data:olderPageUrl'><a class='btn' expr:href='data:olderPageUrl'>Bài cũ hơn &#8594;</a></b:if></span>
+              </div>
+            </b:if>
+          </b:if>
+
+        </b:includable>
+      </b:widget>
+    </b:section>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class='sidebar'>
+    <b:section class='sidebar-section' id='sidebar' showaddelement='yes'>
+      <b:widget id='BlogSearch1' locked='false' title='Tìm kiếm' type='BlogSearch' version='2' visible='true'/>
+      <b:widget id='HTML1' locked='false' title='Về VNXGroup' type='HTML' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='content'>&lt;div class="author-box"&gt;&lt;div class="ava"&gt;VNX&lt;/div&gt;&lt;b&gt;Võ Ngọc Xa&lt;/b&gt;&lt;p&gt;Kế toán – người viết phần mềm nhỏ giúp công việc văn phòng nhẹ nhàng hơn: bảng lương, quản lý tài sản, ứng dụng di động.&lt;/p&gt;&lt;div class="social"&gt;&lt;a class="yt" href="https://www.youtube.com/@vnxgroup" target="_blank" rel="noopener"&gt;YouTube&lt;/a&gt;&lt;a class="fb" href="https://www.facebook.com/Joseph.ngocxa" target="_blank" rel="noopener"&gt;Facebook&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+      <b:widget id='Label1' locked='false' title='Chủ đề' type='Label' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+          <b:widget-setting name='display'>LIST</b:widget-setting>
+          <b:widget-setting name='selectedLabelsList'/>
+          <b:widget-setting name='showType'>ALL</b:widget-setting>
+          <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+      <b:widget id='PopularPosts1' locked='false' title='Xem nhiều nhất' type='PopularPosts' version='2' visible='true'/>
+      <b:widget id='BlogArchive1' locked='false' title='Lưu trữ' type='BlogArchive' version='2' visible='true'/>
+    </b:section>
+  </aside>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class='site-footer'>
+  <div class='wrap'>
+    <div>&#169; <span id='vnx-year'>2026</span> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> · Phần mềm &amp; kiến thức tin học văn phòng</div>
+    <div><a href='https://www.youtube.com/@vnxgroup' rel='noopener' target='_blank'>YouTube</a> · <a href='https://www.facebook.com/Joseph.ngocxa' rel='noopener' target='_blank'>Facebook</a> · <a expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;'>RSS</a></div>
+  </div>
+</footer>
+<button aria-label='Lên đầu trang' class='to-top' id='toTop' type='button'>&#8593;</button>
+
+<script>
+//<![CDATA[
+var VNX_CONFIG = {
+  productLabel: 'Sản phẩm',   // nhãn dùng cho bài giới thiệu phần mềm
+  productCount: 6,            // số sản phẩm hiện trên trang chủ
+  relatedCount: 3             // số bài liên quan dưới mỗi bài
+};
+(function(){
+  var home = location.protocol + '//' + location.host + '/';
+  function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function bigThumb(u){
+    if(!u) return '';
+    return u.replace(/\/s\d+(-[a-z0-9-]+)?\//,'/w640-h360-p-k-no-nu/').replace(/=s\d+(-[a-z0-9-]+)?$/,'=w640-h360-p-k-no-nu');
+  }
+  function feed(label, n, cb){
+    var url = home + 'feeds/posts/summary' + (label ? '/-/' + encodeURIComponent(label) : '') + '?alt=json&max-results=' + n;
+    fetch(url).then(function(r){return r.json();}).then(function(d){cb((d.feed && d.feed.entry) || []);}).catch(function(){cb([]);});
+  }
+  function card(e, badge){
+    var link = '', i;
+    for(i=0;i<e.link.length;i++){ if(e.link[i].rel==='alternate'){ link=e.link[i].href; } }
+    var title = e.title.$t;
+    var img = e.media$thumbnail ? bigThumb(e.media$thumbnail.url) : '';
+    var sum = (e.summary && e.summary.$t || '').replace(/\s+/g,' ').trim();
+    if(sum.length>140) sum = sum.slice(0,140) + '…';
+    var d = new Date(e.published.$t);
+    var date = ('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
+    return '<article class="card"><a class="card-thumb" href="'+esc(link)+'">' +
+      (img ? '<img loading="lazy" alt="'+esc(title)+'" src="'+esc(img)+'"/>' : '<span class="thumb-ph">VNX</span>') +
+      (badge ? '<span class="badge">'+esc(badge)+'</span>' : '') +
+      '</a><div class="card-body"><h3 class="card-title"><a href="'+esc(link)+'">'+esc(title)+'</a></h3>' +
+      '<p class="card-snip">'+esc(sum)+'</p><div class="card-meta"><span>'+date+'</span><a class="more" href="'+esc(link)+'">Xem &#8594;</a></div></div></article>';
+  }
+
+  // Lưới sản phẩm trên trang chủ
+  var box = document.getElementById('vnx-products');
+  if(box){
+    feed(VNX_CONFIG.productLabel, VNX_CONFIG.productCount, function(list){
+      if(!list.length){ box.innerHTML = '<div class="status-msg">Chưa có sản phẩm. Hãy đăng bài và gắn nhãn <b>'+esc(VNX_CONFIG.productLabel)+'</b>.</div>'; return; }
+      box.innerHTML = list.map(function(e){return card(e,'Phần mềm');}).join('');
+    });
+  }
+
+  // Bài liên quan
+  var rel = document.getElementById('vnx-related');
+  if(rel){
+    var cur = (rel.getAttribute('data-url')||'').replace(/^https?:/,'');
+    feed(rel.getAttribute('data-label'), VNX_CONFIG.relatedCount + 1, function(list){
+      list = list.filter(function(e){
+        return !e.link.some(function(l){return l.rel==='alternate' && l.href.replace(/^https?:/,'')===cur;});
+      }).slice(0, VNX_CONFIG.relatedCount);
+      if(!list.length){ rel.style.display='none'; return; }
+      rel.querySelector('.grid').innerHTML = list.map(function(e){return card(e);}).join('');
+    });
+  }
+
+  // Nút sao chép cho khối code
+  document.querySelectorAll('.post-body pre').forEach(function(pre){
+    var b = document.createElement('button');
+    b.className='copy-btn'; b.type='button'; b.textContent='Sao chép';
+    b.onclick=function(){
+      var t = pre.innerText.replace(/Sao chép$|Đã chép ✓$/,'');
+      navigator.clipboard && navigator.clipboard.writeText(t.trim()).then(function(){b.textContent='Đã chép ✓';setTimeout(function(){b.textContent='Sao chép';},1500);});
+    };
+    pre.appendChild(b);
+  });
+
+  // Sao chép link bài
+  var cp = document.getElementById('copyLink');
+  if(cp){ cp.onclick=function(){ navigator.clipboard && navigator.clipboard.writeText(cp.getAttribute('data-url')).then(function(){cp.textContent='Đã chép ✓';}); }; }
+
+  // Menu di động
+  var tg = document.getElementById('navToggle'), nav = document.getElementById('nav');
+  if(tg && nav){ tg.onclick=function(){ nav.classList.toggle('open'); }; }
+
+  // Nút lên đầu trang + năm
+  var top = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){ top.classList.toggle('show', window.scrollY > 600); }, {passive:true});
+  top.onclick=function(){ window.scrollTo(0,0); };
+  var y = document.getElementById('vnx-year'); if(y) y.textContent = new Date().getFullYear();
+})();
+//]]>
+</script>
+</body>
+</html>
