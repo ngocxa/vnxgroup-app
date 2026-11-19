@@ -17,13 +17,14 @@
   <b:include data='blog' name='all-head-content'/>
   <link href='https://fonts.googleapis.com' rel='preconnect'/>
   <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
-  <link href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap' rel='stylesheet'/>
   <b:skin><![CDATA[
 /* ===== VNXGroup Software theme ===== */
 :root{
   --navy:#14234b; --navy-2:#1f3a7a; --accent:#f2a516; --accent-2:#ffcf5c;
   --bg:#f5f7fb; --card:#ffffff; --text:#1b2333; --muted:#5d6b85; --line:#e3e8f2;
   --radius:14px; --shadow:0 6px 24px rgba(20,35,75,.08);
+  --logo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' role='img' aria-label='VNXGroup'%3E%3Cdefs%3E%3ClinearGradient id='vnxG' x1='0.1' y1='0.3' x2='0.7' y2='1'%3E%3Cstop offset='0' stop-color='%23ff1f6e'/%3E%3Cstop offset='0.45' stop-color='%23ff6a1f'/%3E%3Cstop offset='0.85' stop-color='%23ffc400'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M91.1 28.9 A44 44 0 1 0 101.3 75' fill='none' stroke='url(%23vnxG)' stroke-width='15'/%3E%3Crect x='71' y='69' width='37' height='12' rx='3' fill='%23ffc000'/%3E%3Cg transform='translate(37 34) skewX(-12)'%3E%3Crect x='0'  y='0' width='24' height='27' rx='3.5' fill='%23ff1462'/%3E%3Crect x='26' y='0' width='24' height='27' rx='3.5' fill='%2312b53a'/%3E%3Crect x='52' y='0' width='24' height='27' rx='3.5' fill='%230a5fd1'/%3E%3C/g%3E%3Cg fill='%23fff' font-family='Be Vietnam Pro, Arial Black, Arial, sans-serif' font-weight='800' font-size='21' text-anchor='middle' font-style='italic'%3E%3Ctext x='46' y='55'%3EV%3C/text%3E%3Ctext x='72' y='55'%3EN%3C/text%3E%3Ctext x='98' y='55'%3EX%3C/text%3E%3C/g%3E%3C/svg%3E");
   --font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --mono:'JetBrains Mono',Consolas,monospace;
 }
@@ -39,12 +40,13 @@ img{max-width:100%;height:auto}
 /* ----- Header ----- */
 .site-header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.15)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.brand .widget{margin:0}
-.brand h1,.brand .title{margin:0;font-size:22px;font-weight:800;letter-spacing:-.3px;line-height:1.2}
-.brand a{color:#fff}
-.brand a:hover{color:var(--accent-2)}
-.brand p,.brand .description{display:none}
-.brand img{max-height:44px;width:auto;display:block}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;min-width:0}
+.brand:hover{color:#fff}
+.brand-mark{width:46px;height:46px;flex:none;display:block}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-name{font-size:21px;font-weight:800;letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-tag{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#aab6d3}
+.brand:hover .brand-name{color:var(--accent-2)}
 .nav-toggle{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;padding:6px}
 .main-nav .widget h3,.main-nav .widget .title{display:none}
 .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
@@ -90,7 +92,7 @@ img{max-width:100%;height:auto}
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(20,35,75,.14)}
 .card-thumb{position:relative;display:block;aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy),var(--navy-2));overflow:hidden}
 .card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.thumb-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:44px;font-weight:800}
+.thumb-ph{position:absolute;inset:0;font-size:0;color:transparent;background:var(--logo) center/34% no-repeat}
 .badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#1b1300;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
 .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
 .card-labels{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
@@ -176,7 +178,7 @@ img{max-width:100%;height:auto}
 .sidebar .PopularPosts img{border-radius:8px}
 .sidebar .PopularPosts .snippet-item,.sidebar .PopularPosts .item-snippet{font-size:13px;color:var(--muted)}
 .author-box{text-align:center}
-.author-box .ava{width:84px;height:84px;border-radius:50%;margin:0 auto 10px;background:var(--navy);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px}
+.author-box .ava{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;font-size:0;color:transparent;background:#fff var(--logo) center/84% no-repeat;border:1px solid var(--line);box-shadow:var(--shadow)}
 .author-box p{color:var(--muted);font-size:14.5px;margin:6px 0 14px}
 .social{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .social a{padding:7px 14px;border-radius:8px;color:#fff !important;font-weight:600;font-size:14px}
@@ -198,6 +200,8 @@ img{max-width:100%;height:auto}
 }
 @media (max-width:720px){
   .nav-toggle{display:block}
+  .brand-tag{display:none}
+  .brand-mark{width:40px;height:40px}
   .main-nav{position:absolute;left:0;right:0;top:64px;background:var(--navy);padding:8px 16px 16px;display:none;box-shadow:0 10px 20px rgba(0,0,0,.2)}
   .main-nav.open{display:block}
   .main-nav ul{flex-direction:column}
@@ -220,9 +224,10 @@ img{max-width:100%;height:auto}
 <!-- ===== HEADER ===== -->
 <header class='site-header'>
   <div class='wrap'>
-    <b:section class='brand' id='header' maxwidgets='1' showaddelement='no'>
-      <b:widget id='Header1' locked='true' title='VNXGroup Software (Tiêu đề)' type='Header' version='2' visible='true'/>
-    </b:section>
+    <a class='brand' expr:href='data:blog.homepageUrl' expr:title='data:blog.title'>
+      <svg aria-hidden='true' class='brand-mark' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='vnxG' x1='0.1' y1='0.3' x2='0.7' y2='1'><stop offset='0' stop-color='#ff1f6e'/><stop offset='0.45' stop-color='#ff6a1f'/><stop offset='0.85' stop-color='#ffc400'/></linearGradient></defs><path d='M91.1 28.9 A44 44 0 1 0 101.3 75' fill='none' stroke='url(#vnxG)' stroke-width='15'/><rect x='71' y='69' width='37' height='12' rx='3' fill='#ffc000'/><g transform='translate(37 34) skewX(-12)'><rect x='0'  y='0' width='24' height='27' rx='3.5' fill='#ff1462'/><rect x='26' y='0' width='24' height='27' rx='3.5' fill='#12b53a'/><rect x='52' y='0' width='24' height='27' rx='3.5' fill='#0a5fd1'/></g><g fill='#fff' font-family='Be Vietnam Pro, Arial Black, Arial, sans-serif' font-weight='800' font-size='21' text-anchor='middle' font-style='italic'><text x='46' y='55'>V</text><text x='72' y='55'>N</text><text x='98' y='55'>X</text></g></svg>
+      <span class='brand-text'><span class='brand-name'><data:blog.title/></span><span class='brand-tag'>Phần mềm · Kiến thức tin học</span></span>
+    </a>
     <button aria-label='Mở menu' class='nav-toggle' id='navToggle' type='button'>&#9776;</button>
     <b:section class='main-nav' id='nav' maxwidgets='1' showaddelement='no'>
       <b:widget id='LinkList1' locked='false' title='Menu chính' type='LinkList' version='2' visible='true'>

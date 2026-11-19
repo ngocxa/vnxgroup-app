@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="VNXGroup">
+  <defs>
+    <linearGradient id="vnxT" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff2d6a"/><stop offset="0.55" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffc400"/>
+    </linearGradient>
+  </defs>
+  <g>
+  <defs>
+    <linearGradient id="vnxG" x1="0.1" y1="0.3" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#ff1f6e"/>
+      <stop offset="0.45" stop-color="#ff6a1f"/>
+      <stop offset="0.85" stop-color="#ffc400"/>
+    </linearGradient>
+  </defs>
+  <!-- Chữ G -->
+  <path d="M91.1 28.9 A44 44 0 1 0 101.3 75" fill="none" stroke="url(#vnxG)" stroke-width="15"/>
+  <rect x="71" y="69" width="37" height="12" rx="3" fill="#ffc000"/>
+  <!-- 3 ô V N X -->
+  <g transform="translate(37 34) skewX(-12)">
+    <rect x="0"  y="0" width="24" height="27" rx="3.5" fill="#ff1462"/>
+    <rect x="26" y="0" width="24" height="27" rx="3.5" fill="#12b53a"/>
+    <rect x="52" y="0" width="24" height="27" rx="3.5" fill="#0a5fd1"/>
+  </g>
+  <g fill="#fff" font-family="Be Vietnam Pro, Arial Black, Arial, sans-serif" font-weight="800" font-size="21" text-anchor="middle" font-style="italic">
+    <text x="46" y="55">V</text>
+    <text x="72" y="55">N</text>
+    <text x="98" y="55">X</text>
+  </g>
+</g>
+  <text x="134" y="72" font-family="Be Vietnam Pro, Arial Black, Arial, sans-serif" font-weight="800" font-size="54" letter-spacing="-1.5"><tspan fill="#14234b">VNX</tspan><tspan fill="url(#vnxT)">Group</tspan></text>
+  <text x="137" y="98" font-family="Be Vietnam Pro, Arial, sans-serif" font-weight="600" font-size="15" letter-spacing="2.4" fill="#5d6b85">PHẦN MỀM · KIẾN THỨC TIN HỌC</text>
+</svg>
