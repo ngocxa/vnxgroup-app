@@ -1,0 +1,59 @@
+1
+00:00:00,503 --> 00:00:08,352
+Xin chào các bạn, chào mừng đến với kênh VNXGroup Software. Hôm nay mình hướng dẫn sử dụng phần mềm Quản lý viên chức.
+
+2
+00:00:09,353 --> 00:00:22,401
+Mở phần mềm bằng Chrome hoặc Edge, không cần cài đặt. Trang chủ cho biết ngay việc cần làm: số người đến hạn nâng lương trong ba tháng tới, người đã đến hạn mà chưa cập nhật, và người sắp nghỉ hưu.
+
+3
+00:00:22,556 --> 00:00:28,498
+Bên dưới là quy trình bảy bước theo dõi nâng lương. Bấm vào từng bước để làm ngay bước đó.
+
+4
+00:00:29,878 --> 00:00:41,489
+Lần đầu sử dụng, bấm Nhập Excel và chọn file quản lý cán bộ của đơn vị. Phần mềm tự đọc ngày sinh, chức danh, ngạch, bậc, hệ số và ngày hưởng của từng người.
+
+5
+00:00:42,015 --> 00:00:51,484
+Trang Viên chức liệt kê theo từng khoa phòng. Cột Lần sau cho biết ngày đến hạn và hệ số mới; khen thưởng, kỷ luật hiện ngay bên cạnh.
+
+6
+00:00:52,770 --> 00:00:59,261
+Bấm vào tên để mở hồ sơ. Thẻ Lương hiện thang bậc của ngạch và tự tính lần nâng lương sau.
+
+7
+00:00:59,416 --> 00:01:06,482
+Thẻ Khen thưởng ghi năm thành tích, hình thức và số quyết định. Đây là dữ liệu để xét nâng lương trước hạn.
+
+8
+00:01:08,506 --> 00:01:18,602
+Trang Nâng lương thường xuyên: chọn Quý này hoặc Quý sau, phần mềm liệt kê người đến hạn, bậc và hệ số được nâng lên, ngày hưởng mới.
+
+9
+00:01:18,756 --> 00:01:29,583
+Bấm Xuất danh sách theo mẫu đơn vị để có file Excel trình ký. Khi có quyết định, chọn người rồi bấm Ghi nhận, phần mềm tự cập nhật bậc mới và lưu vào lịch sử.
+
+10
+00:01:30,139 --> 00:01:40,810
+Trang Nâng lương trước hạn: phần mềm tự đối chiếu khen thưởng, thời gian còn thiếu, kỷ luật và chỉ tiêu mười phần trăm, ghi rõ lý do người chưa đủ điều kiện.
+
+11
+00:01:40,965 --> 00:01:48,344
+Bấm In danh sách đề nghị là có ngay bản in đúng thể thức, đủ chỗ ký của người lập bảng, trưởng phòng và giám đốc.
+
+12
+00:01:49,635 --> 00:01:58,294
+Trang Nghỉ hưu tính ngày nghỉ theo lộ trình của Nghị định một trăm ba mươi lăm, kèm hạn thông báo trước sáu tháng và hạn ra quyết định trước ba tháng.
+
+13
+00:01:58,839 --> 00:02:04,703
+Trang Khoa phòng tổng hợp số người, nam nữ và số người đến hạn nâng lương của từng khoa.
+
+14
+00:02:05,338 --> 00:02:13,109
+Dữ liệu lưu ngay trên máy. Nhớ bấm Sao lưu thường xuyên để giữ một file dự phòng, khi đổi máy thì bấm Khôi phục.
+
+15
+00:02:14,171 --> 00:02:24,345
+Cảm ơn các bạn đã theo dõi. Để nhận bản dùng thử, liên hệ Zalo không chín không một, bốn không bốn, bốn năm ba. Nhớ đăng ký kênh VNXGroup Software nhé!
