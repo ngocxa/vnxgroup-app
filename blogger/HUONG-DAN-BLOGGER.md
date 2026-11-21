@@ -26,7 +26,7 @@ Website **miễn phí 100%** (Blogger của Google): không mất tiền hosting
 
 ## Logo
 Dùng **logo gốc** (chữ G chuyển màu ôm 3 ô V N X) – đã **gắn sẵn trong giao diện** (thanh tiêu đề, hộp tác giả, ảnh thay thế khi bài chưa có ảnh bìa), không cần tải lên.
-Chỉ cần thêm **favicon**: **Bố cục → Biểu tượng trang web (Favicon) → Chỉnh sửa** → chọn `logo/favicon.ico`.
+**Favicon** (biểu tượng trên tab trình duyệt) cũng đã gắn sẵn trong giao diện. Nên tải thêm `logo/favicon.ico` ở **Bố cục → Biểu tượng trang web (Favicon) → Chỉnh sửa** để thay hẳn chữ B mặc định của Blogger. Trình duyệt nhớ biểu tượng cũ khá lâu: nếu vẫn thấy chữ B, nhấn **Ctrl+F5** hoặc mở tab ẩn danh để xem.
 
 | File trong `logo/` | Dùng cho |
 |---|---|
