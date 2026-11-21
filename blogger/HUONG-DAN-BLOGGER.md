@@ -1,4 +1,6 @@
-# Trang web phần mềm VNXGroup trên Blogger – Hướng dẫn
+# Trang web VNXGroup Software trên Blogger – Hướng dẫn
+
+Địa chỉ blog: **https://vnxgroupsoftware.blogspot.com/** · YouTube: **https://www.youtube.com/@vnxgroupsoftware** · Zalo/ĐT: **0901 404 453** · Gmail: **vnxgiokinhtoi@gmail.com**
 
 Website **miễn phí 100%** (Blogger của Google): không mất tiền hosting, có HTTPS, đăng bài bằng trình soạn thảo quen thuộc.
 
@@ -14,7 +16,7 @@ Website **miễn phí 100%** (Blogger của Google): không mất tiền hosting
 
 ## Bước 1 – Tạo blog (5 phút)
 1. Vào **https://www.blogger.com** → đăng nhập Gmail → **Tạo blog mới**.
-2. Tên: `VNXGroup Software` (đổi tùy ý). Địa chỉ gợi ý: `vnxgroup-app.blogspot.com` (hoặc tên khác còn trống).
+2. Tên: `VNXGroup Software` – địa chỉ: `vnxgroupsoftware.blogspot.com`.
 
 ## Bước 2 – Cài giao diện
 1. Tải file `vnxgroup-blogger-theme.xml` về máy (trên GitHub: mở file → nút **Download raw file**).
@@ -23,19 +25,19 @@ Website **miễn phí 100%** (Blogger của Google): không mất tiền hosting
 4. Ở mục *Chủ đề dành cho thiết bị di động* chọn **Máy tính** (để điện thoại dùng cùng giao diện).
 
 ## Logo
-Logo đã được **gắn sẵn trong giao diện** (thanh tiêu đề, hộp tác giả, ảnh thay thế khi bài chưa có ảnh bìa) – không cần tải lên.
-Chỉ cần thêm **favicon** (biểu tượng trên tab trình duyệt): **Bố cục → Biểu tượng trang web (Favicon) → Chỉnh sửa** → chọn `logo/favicon.ico`.
+Dùng **logo gốc** (chữ G chuyển màu ôm 3 ô V N X) – đã **gắn sẵn trong giao diện** (thanh tiêu đề, hộp tác giả, ảnh thay thế khi bài chưa có ảnh bìa), không cần tải lên.
+Chỉ cần thêm **favicon**: **Bố cục → Biểu tượng trang web (Favicon) → Chỉnh sửa** → chọn `logo/favicon.ico`.
 
 | File trong `logo/` | Dùng cho |
 |---|---|
-| `vnxgroup-icon-512.png` | Biểu tượng nền trong suốt – chèn vào ảnh, video, slide |
-| `vnxgroup-avatar-512.png` | Ảnh đại diện nền trắng – YouTube, Facebook, Zalo, hồ sơ Blogger |
-| `vnxgroup-logo-nen-toi.png` | Logo ngang trên nền tối (banner, thumbnail YouTube nền tối) |
-| `vnxgroup-logo-nen-sang.png` | Logo ngang trên nền sáng (văn bản, ảnh bìa nền trắng) |
-| `*.svg` | Bản vector – phóng to bao nhiêu cũng nét, gửi cho nhà in |
-| `favicon.ico` | Favicon cho Blogger |
+| `vnxgroup-logo-goc.png` | Logo gốc nền trong suốt (1024 px) – chèn video, ảnh bìa, slide |
+| `vnxgroup-logo-goc-512.png` | Logo gốc cỡ nhỏ (512 px) |
+| `vnxgroup-logo-goc-nen-trang.png` | Ảnh đại diện nền trắng – YouTube, Zalo, hồ sơ Blogger |
+| `favicon.ico` | Favicon cho Blogger (từ logo gốc) |
+| `vnxgroup-mark.svg`, `vnxgroup-logo-nen-*` | Bản vẽ lại trước đây – **không dùng làm logo chính** |
 
-> Khi tải lại giao diện mới, Blogger có thể hỏi xóa tiện ích *Header1* (tiêu đề cũ) – chọn **Xóa**, vì logo và tên blog nay được hiển thị trực tiếp. Tên hiển thị lấy từ **Cài đặt → Tiêu đề**.
+> Khi tải lại giao diện, nếu Blogger hỏi xóa tiện ích *Header1* (tiêu đề cũ) – chọn **Xóa**. Tên hiển thị lấy từ **Cài đặt → Tiêu đề**.
+> Hộp **Về VNXGroup Software** ở thanh bên đã có Zalo, Gmail, YouTube. Nếu sau khi tải giao diện mà hộp vẫn hiện nội dung cũ: **Bố cục → Về VNXGroup Software → Chỉnh sửa**, xóa nội dung rồi tải lại giao diện, hoặc dán nội dung mới từ file theme (tìm `author-box`).
 
 ## Bước 3 – Cài đặt cơ bản
 - **Cài đặt → Ngôn ngữ và định dạng**: Tiếng Việt, múi giờ GMT+7 (Bangkok/Hà Nội).
@@ -47,7 +49,7 @@ Chỉ cần thêm **favicon** (biểu tượng trên tab trình duyệt): **Bố
 ## Bước 4 – Tạo 2 trang tĩnh (cho menu)
 **Trang → Trang mới**:
 - `Giới thiệu` → sau khi xuất bản, đường dẫn là `/p/gioi-thieu.html`
-- `Liên hệ` → `/p/lien-he.html` (ghi Zalo/email/Facebook)
+- `Liên hệ` → `/p/lien-he.html` – dán nội dung file `trang-lien-he.html` (Zalo/ĐT 0901 404 453 · Gmail vnxgiokinhtoi@gmail.com · YouTube @vnxgroupsoftware)
 
 > Đặt tiêu đề không dấu trước (`gioi thieu`) → Xuất bản → sửa lại có dấu, để link đẹp đúng như menu.
 
@@ -72,7 +74,7 @@ Làm tương tự với `mau-bai-viet.html`, gắn nhãn `Bài viết` + nhãn c
 ## Có sẵn trong giao diện
 - Trang chủ: banner giới thiệu, lưới sản phẩm (lấy theo nhãn), danh sách bài mới dạng thẻ.
 - Trang bài: đường dẫn (breadcrumb), tác giả, ngày, nhãn, nút chia sẻ Facebook/Zalo/Sao chép link, **bài liên quan** tự động, bình luận.
-- Thanh bên: tìm kiếm, giới thiệu tác giả + YouTube/Facebook, chủ đề, xem nhiều nhất, lưu trữ.
+- Thanh bên: tìm kiếm, giới thiệu tác giả + Zalo, Gmail, YouTube, chủ đề, xem nhiều nhất, lưu trữ.
 - Tương thích điện thoại (menu thu gọn), nút lên đầu trang, font Be Vietnam Pro hiển thị tiếng Việt đẹp.
 
 ## Tùy chỉnh nhanh (Chủ đề → ▾ → Chỉnh sửa HTML)
