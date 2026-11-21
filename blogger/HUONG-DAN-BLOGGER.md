@@ -39,6 +39,9 @@ Chỉ cần thêm **favicon**: **Bố cục → Biểu tượng trang web (Favic
 > Khi tải lại giao diện, nếu Blogger hỏi xóa tiện ích *Header1* (tiêu đề cũ) – chọn **Xóa**. Tên hiển thị lấy từ **Cài đặt → Tiêu đề**.
 > Hộp **Về VNXGroup Software** ở thanh bên đã có Zalo, Gmail, YouTube. Nếu sau khi tải giao diện mà hộp vẫn hiện nội dung cũ: **Bố cục → Về VNXGroup Software → Chỉnh sửa**, xóa nội dung rồi tải lại giao diện, hoặc dán nội dung mới từ file theme (tìm `author-box`).
 
+### Thấy "Được tạo bởi Blogger", "Báo cáo vi phạm", "Giới thiệu về tôi" ở cuối trang?
+Đó là tiện ích của giao diện cũ Blogger giữ lại. Giao diện mới đã tự ẩn chúng. Muốn dọn hẳn: **Bố cục** → tìm các khối *Tiêu đề*, *Ghi nhận tác giả*, *Báo cáo lạm dụng*, *Hồ sơ* → **Chỉnh sửa → Xóa** (khối nào không có nút Xóa thì cứ để, đã được ẩn).
+
 ## Bước 3 – Cài đặt cơ bản
 - **Cài đặt → Ngôn ngữ và định dạng**: Tiếng Việt, múi giờ GMT+7 (Bangkok/Hà Nội).
 - **Cài đặt → Mô tả**: viết 1–2 câu giới thiệu (Google dùng để hiển thị kết quả tìm kiếm).

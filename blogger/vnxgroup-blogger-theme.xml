@@ -198,6 +198,13 @@ img{max-width:100%;height:auto}
 .author-box .ci{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:22px;border-radius:6px;font-size:11px;font-weight:800;color:#fff}
 .ci.zl{background:#0068ff}.ci.gm{background:#ea4335;font-size:13px}
 
+/* Ẩn tiện ích mặc định Blogger còn sót từ giao diện cũ (tiêu đề cũ, "Được tạo bởi Blogger", "Báo cáo vi phạm", "Giới thiệu về tôi") */
+.widget.Header,.widget.Attribution,.widget.ReportAbuse,#main .widget.Profile{display:none !important}
+/* Nếu đặt tiện ích Hồ sơ ở thanh bên thì hiển thị gọn */
+.sidebar .Profile{text-align:center}
+.sidebar .Profile img,.sidebar .Profile .profile-img{width:84px;height:84px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 8px}
+.sidebar .Profile .profile-name-link,.sidebar .Profile .profile-link{display:block;font-weight:600}
+
 /* ----- Footer ----- */
 .site-footer{background:#0e1836;color:#aab6d3;padding:36px 0;font-size:14px}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
