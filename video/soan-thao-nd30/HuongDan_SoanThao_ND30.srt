@@ -1,0 +1,71 @@
+1
+00:00:00,506 --> 00:00:09,322
+Xin chào các bạn, chào mừng đến với kênh VNXGroup Software. Hôm nay mình hướng dẫn sử dụng phần mềm Soạn thảo văn bản NĐ30.
+
+2
+00:00:10,338 --> 00:00:22,367
+Mở phần mềm bằng Chrome hoặc Edge, không cần cài đặt. Trang chủ có quy trình năm bước: khởi tạo, nhập nội dung, kiểm tra chuẩn hóa, nơi nhận người ký, và xuất file Word.
+
+3
+00:00:23,872 --> 00:00:29,893
+Vào Tạo mới, chọn Trang trống, rồi chọn loại văn bản, ví dụ Công văn.
+
+4
+00:00:30,051 --> 00:00:42,080
+Phần mềm dựng sẵn phần đầu đúng Nghị định 30: quốc hiệu, tiêu ngữ, tên cơ quan, số ký hiệu và ngày tháng. Thông tin cơ quan chỉ khai báo một lần, lần sau tự nhớ.
+
+5
+00:00:43,905 --> 00:00:51,049
+Bây giờ gõ thẳng lên trang A4: trích yếu, nơi nhận, nội dung, rồi họ tên người ký.
+
+6
+00:01:01,926 --> 00:01:10,193
+Cột bên phải báo lỗi ngay khi gõ. Ở đây là chữ bổ xung viết sai, và họ tên người ký chưa viết hoa.
+
+7
+00:01:10,739 --> 00:01:20,992
+Bấm Chuẩn hóa NĐ30: phần mềm tự viết hoa họ tên, sửa chính tả và thêm dấu kết thúc văn bản. Chỗ còn lại, bấm nút Sửa là xong.
+
+8
+00:01:21,937 --> 00:01:29,708
+Thử với một văn bản mẫu có lỗi cố ý: quyết định này chỉ được tám mươi chín điểm, với mười bốn lỗi phải sửa.
+
+9
+00:01:29,864 --> 00:01:39,333
+Lỗi chia theo nhóm: thể thức, căn cứ, chính tả, đánh máy, số liệu. Bấm Tới chỗ này để xem đúng vị trí sai trên trang.
+
+10
+00:01:39,491 --> 00:01:48,229
+Bấm Chuẩn hóa một lần, phần mềm sửa mười sáu chỗ, điểm lên một trăm. Căn cứ đã hết hiệu lực được giữ lại để bạn tự quyết định.
+
+11
+00:01:48,804 --> 00:01:55,530
+Chức năng Từ tóm tắt: chỉ cần gõ vài ý chính như lý do, thời gian, kinh phí.
+
+12
+00:01:55,687 --> 00:02:04,268
+Bấm Viết theo mẫu, phần mềm viết thành công văn hoàn chỉnh. Chỗ còn thiếu để ba chấm cho bạn điền, phần mềm không tự bịa số liệu.
+
+13
+00:02:04,854 --> 00:02:20,723
+Nhận văn bản cấp trên thì vào Mở, Nhập, chọn Phúc đáp văn bản cấp trên. Chọn file Word, PDF, ảnh chụp, hoặc dán nội dung. Phần mềm tách từng yêu cầu, hạn trả lời, rồi dựng sẵn khung văn bản trả lời.
+
+14
+00:02:22,637 --> 00:02:30,565
+Với văn bản dài như quy chế chi tiêu nội bộ, dùng Rà soát văn bản dài. Bản quy chế mẫu này được bốn mươi lăm điểm.
+
+15
+00:02:30,719 --> 00:02:39,300
+Bấm Sửa tất cả lỗi tự động: phần mềm sửa mười lăm chỗ, điểm lên tám mươi tư, và chỉ rõ những chỗ cần bạn xem lại.
+
+16
+00:02:39,871 --> 00:02:48,922
+Menu Tra cứu NĐ30 có bảng thể thức, cỡ chữ, chữ viết tắt, cách dẫn căn cứ, và danh sách văn bản đã hết hiệu lực.
+
+17
+00:02:50,838 --> 00:02:59,497
+Cuối cùng, vào Xuất văn bản để tải file Word đúng khổ A4, lề, phông chữ, hoặc in và lưu PDF để trình ký.
+
+18
+00:03:01,803 --> 00:03:11,977
+Cảm ơn các bạn đã theo dõi. Để nhận bản dùng thử, liên hệ Zalo không chín không một, bốn không bốn, bốn năm ba. Nhớ đăng ký kênh VNXGroup Software nhé!
