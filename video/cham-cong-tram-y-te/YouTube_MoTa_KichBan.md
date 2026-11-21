@@ -1,6 +1,6 @@
 # Video hướng dẫn: Phần mềm Chấm công Trạm Y tế – Trực tuyến
 
-File video: `HuongDan_ChamCong_TramYTe.mp4` (Full HD 1920×1080, 4:31) · Phụ đề: `HuongDan_ChamCong_TramYTe.srt` · Ảnh thumbnail: `thumbnail.jpg`
+File video: `HuongDan_ChamCong_TramYTe_CoNhac.mp4` (có nhạc nền) hoặc `HuongDan_ChamCong_TramYTe.mp4` (không nhạc) (Full HD 1920×1080, 4:31) · Phụ đề: `HuongDan_ChamCong_TramYTe.srt` · Ảnh thumbnail: `thumbnail.jpg`
 Kênh đăng: https://www.youtube.com/@vnxgroupsoftware
 
 ---
@@ -56,7 +56,7 @@ chấm công trạm y tế, phần mềm chấm công, chấm công trực tuy�
 - Tải `thumbnail.jpg` làm hình thu nhỏ.
 - Phụ đề: Phụ đề → Thêm ngôn ngữ Tiếng Việt → Tải tệp lên → chọn `HuongDan_ChamCong_TramYTe.srt` (có thời gian).
 - Màn hình kết thúc (End screen) đặt ở 20 giây cuối: nút Đăng ký + 1 video đề xuất.
-- Video hiện không có âm thanh. Có thể thêm nhạc nền miễn phí trong YouTube Studio → Trình chỉnh sửa → Âm thanh, hoặc tự thu lời đọc theo kịch bản dưới đây.
+- Bản `_CoNhac` đã có nhạc nền do VNXGroup Software tự soạn (`NhacNen_VNXGroupSoftware.mp3`, không vướng bản quyền). Nếu tự thu lời đọc theo kịch bản dưới đây, nên dùng bản không nhạc rồi lồng nhạc nhỏ khoảng 15–20% âm lượng.
 
 ## 5. Kịch bản lời đọc (theo mốc thời gian trong video)
 Đọc chậm, rõ; mỗi câu khớp với dòng chữ hiện trên màn hình.
