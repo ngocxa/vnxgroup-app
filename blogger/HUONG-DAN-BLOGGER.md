@@ -51,7 +51,7 @@ Dùng **logo gốc** (chữ G chuyển màu ôm 3 ô V N X) – đã **gắn s�
 
 ## Bước 4 – Tạo 2 trang tĩnh (cho menu)
 **Trang → Trang mới**:
-- `Giới thiệu` → sau khi xuất bản, đường dẫn là `/p/gioi-thieu.html`
+- `Giới thiệu` → dán nội dung file `trang-gioi-thieu.html`; đường dẫn `/p/gioi-thieu.html`
 - `Liên hệ` → `/p/lien-he.html` – dán nội dung file `trang-lien-he.html` (Zalo/ĐT 0901 404 453 · Gmail vnxgiokinhtoi@gmail.com · YouTube @vnxgroupsoftware)
 
 > Đặt tiêu đề không dấu trước (`gioi thieu`) → Xuất bản → sửa lại có dấu, để link đẹp đúng như menu.
