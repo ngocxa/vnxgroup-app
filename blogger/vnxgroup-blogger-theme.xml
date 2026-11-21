@@ -187,11 +187,16 @@ img{max-width:100%;height:auto}
 .sidebar .BlogSearch form{display:flex;gap:8px}
 .sidebar .BlogSearch input[type=text],.sidebar .BlogSearch input[type=search]{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit}
 .sidebar .BlogSearch input[type=submit],.sidebar .BlogSearch button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:0 16px;font:inherit;font-weight:600;cursor:pointer}
-.sidebar .PopularPosts .post{padding:0;box-shadow:none;border:0;border-bottom:1px dashed var(--line);border-radius:0;padding-bottom:12px;margin-bottom:12px}
+.sidebar .PopularPosts .post{padding:0 0 12px;margin:0 0 12px;box-shadow:none;border:0;border-bottom:1px dashed var(--line);border-radius:0}
 .sidebar .PopularPosts .post:last-child{border:0;margin:0;padding:0}
-.sidebar .PopularPosts h3{font-size:15px;margin:0 0 4px;line-height:1.4}
-.sidebar .PopularPosts img{border-radius:8px}
-.sidebar .PopularPosts .snippet-item,.sidebar .PopularPosts .item-snippet{font-size:13px;color:var(--muted)}
+/* Chỉ hiện ảnh nhỏ + tiêu đề: ẩn đoạn trích, ngày đăng, tác giả */
+.sidebar .PopularPosts [class*=snippet],.sidebar .PopularPosts .post-header,.sidebar .PopularPosts .byline,.sidebar .PopularPosts .post-footer,.sidebar .PopularPosts time,.sidebar .PopularPosts .published,.sidebar .PopularPosts .jump-link{display:none !important}
+.sidebar .PopularPosts .post-content,.sidebar .PopularPosts .item-content{display:flex;align-items:center;gap:12px}
+.sidebar .PopularPosts .post-image-link,.sidebar .PopularPosts .item-thumbnail{order:-1;flex:none;width:72px;height:54px;border-radius:8px;overflow:hidden;display:block;margin:0;background:#eef2fb}
+.sidebar .PopularPosts .post-image-link img,.sidebar .PopularPosts .item-thumbnail img{width:100%;height:100%;object-fit:cover;border-radius:0;display:block}
+.sidebar .PopularPosts h3,.sidebar .PopularPosts .post-title,.sidebar .PopularPosts .item-title{font-size:14.5px;line-height:1.4;margin:0;font-weight:700;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sidebar .PopularPosts h3 a,.sidebar .PopularPosts .post-title a,.sidebar .PopularPosts .item-title a{color:var(--text)}
+.sidebar .PopularPosts h3 a:hover,.sidebar .PopularPosts .post-title a:hover{color:var(--navy-2)}
 .author-box{text-align:center}
 .author-box .ava{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;font-size:0;color:transparent;background:#fff var(--logo) center/84% no-repeat;border:1px solid var(--line);box-shadow:var(--shadow)}
 .author-box p{color:var(--muted);font-size:14.5px;margin:6px 0 14px}
