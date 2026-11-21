@@ -15,3 +15,11 @@ Dùng thống nhất cho blog, video, bài đăng, phần mềm.
 Ghi chú:
 - Logo chuẩn là logo gốc (chữ G chuyển màu ôm 3 ô V N X). Các file `vnxgroup-mark.svg`, `vnxgroup-logo-nen-*.svg/png` là bản vẽ lại trước đây – không dùng làm logo chính.
 - Ảnh minh họa phần mềm dùng dữ liệu mẫu (tên giả), không dùng logo cơ quan.
+
+## Video hướng dẫn đã đăng
+
+| Phần mềm | Video | Bài blog |
+|---|---|---|
+| Chấm công Trạm Y tế | https://youtu.be/dL2G8thpkAA | `blogger/bai-viet/cham-cong-tram-y-te/` |
+| Soạn thảo văn bản NĐ30 | https://youtu.be/0RK6bpUKC4o | `blogger/bai-viet/soan-thao-nd30/` |
+| Quản lý viên chức | https://youtu.be/K-jWJ8S7ank | `blogger/bai-viet/quan-ly-vien-chuc/` |
