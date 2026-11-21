@@ -266,5 +266,280 @@
    "ts": false,
    "ma": "V.08.05.12"
   }
- ]
+ ],
+ "nd": [
+  {
+   "ten": "Hà Minh Tâm",
+   "chuyenMon": "Bác sĩ",
+   "hsl": 2.34,
+   "muc": "LCB",
+   "pcud": 0.4
+  },
+  {
+   "ten": "Tôn Thị Nhi",
+   "chuyenMon": "Dược sĩ",
+   "hsl": 2.34,
+   "muc": "LCB",
+   "pcud": 0.3
+  }
+ ],
+ "bh": [
+  {
+   "ten": "Lưu Văn Phát",
+   "chucVu": "Bảo vệ",
+   "tien": 3700000
+  },
+  {
+   "ten": "Mạc Thị Quế",
+   "chucVu": "Hộ lý",
+   "tien": 3700000
+  }
+ ],
+ "nc": [
+  {
+   "ten": "Thạch Văn Rạng",
+   "khoa": "Phòng Tổ chức - Hành chính",
+   "ngayCong": 22,
+   "tien": 4400000
+  },
+  {
+   "ten": "Kim Thị Sen",
+   "khoa": "Khoa Nội tổng hợp",
+   "ngayCong": 20,
+   "tien": 4000000
+  }
+ ],
+ "bs": [
+  {
+   "ten": "Lạc Văn Thông",
+   "chuyenMon": "Bác sĩ",
+   "hsl": 2.67,
+   "muc": "LCB",
+   "pcud": 0.4
+  }
+ ],
+ "tr24": [
+  {
+   "nhom": "Khoa Khám bệnh",
+   "ten": "Quách Văn Yên",
+   "ngThuong": 4,
+   "ngNghi": 2,
+   "ngLe": 0
+  },
+  {
+   "nhom": "Khoa Khám bệnh",
+   "ten": "Âu Thị Ánh",
+   "ngThuong": 5,
+   "ngNghi": 1,
+   "ngLe": 0
+  },
+  {
+   "nhom": "Khoa Nội tổng hợp",
+   "ten": "Ngô Thị Mỹ",
+   "ngThuong": 4,
+   "ngNghi": 2,
+   "ngLe": 0
+  },
+  {
+   "nhom": "Khoa Nội tổng hợp",
+   "ten": "Lý Thị Oanh",
+   "ngThuong": 3,
+   "ngNghi": 2,
+   "ngLe": 0
+  },
+  {
+   "nhom": "Khoa Ngoại - Sản",
+   "ten": "Phan Thị Thảo",
+   "ngThuong": 5,
+   "ngNghi": 1,
+   "ngLe": 0
+  },
+  {
+   "nhom": "Khoa Xét nghiệm - CĐHA",
+   "ten": "Kiều Văn Vinh",
+   "ngThuong": 4,
+   "ngNghi": 1,
+   "ngLe": 0
+  }
+ ],
+ "trhd": [
+  {
+   "nhom": "Hợp đồng",
+   "ten": "Hà Minh Tâm",
+   "soTien": 1200000,
+   "soThang": 1
+  },
+  {
+   "nhom": "Hợp đồng",
+   "ten": "Lạc Văn Thông",
+   "soTien": 1200000,
+   "soThang": 1
+  }
+ ],
+ "dh": [
+  {
+   "ten": "Kiều Văn Vinh",
+   "congViec": "Xét nghiệm",
+   "bac": 3,
+   "heSo": 0.3,
+   "soNgay": 22
+  },
+  {
+   "ten": "La Thị Xuân",
+   "congViec": "X-quang",
+   "bac": 4,
+   "heSo": 0.4,
+   "soNgay": 22
+  },
+  {
+   "ten": "Ngô Thị Mỹ",
+   "congViec": "Truyền nhiễm",
+   "bac": 3,
+   "heSo": 0.3,
+   "soNgay": 20
+  }
+ ],
+ "dhyc": [
+  {
+   "ten": "Mạc Thị Quế",
+   "chucVu": "Y công",
+   "bac": 1,
+   "heSo": 0.1
+  }
+ ],
+ "tn": [
+  {
+   "ten": "Đặng Thị Lan",
+   "congViec": "Kế toán trưởng",
+   "bac": 2,
+   "heSo": 0.2,
+   "soThang": 1
+  },
+  {
+   "ten": "Bùi Văn Khang",
+   "congViec": "Thủ quỹ",
+   "bac": 2,
+   "heSo": 0.1,
+   "soThang": 1
+  }
+ ],
+ "tt": [
+  {
+   "nhom": "Khoa Ngoại - Sản",
+   "ten": "Đỗ Văn Sang",
+   "chucDanh": "chính",
+   "ca1": 3,
+   "ca2": 5,
+   "ca3": 8
+  },
+  {
+   "nhom": "Khoa Ngoại - Sản",
+   "ten": "Phan Thị Thảo",
+   "chucDanh": "phụ",
+   "ca1": 3,
+   "ca2": 5,
+   "ca3": 8
+  },
+  {
+   "nhom": "Khoa Khám bệnh",
+   "ten": "Võ Minh Đức",
+   "chucDanh": "giúp việc",
+   "ca1": 0,
+   "ca2": 2,
+   "ca3": 6
+  }
+ ],
+ "ltg": [
+  {
+   "ten": "Bùi Văn Khang",
+   "heSo": 3.0,
+   "gThuong": 8,
+   "gNghi": 8,
+   "gLe": 0
+  },
+  {
+   "ten": "Phạm Thị Dung",
+   "heSo": 3.03,
+   "gThuong": 6,
+   "gNghi": 4,
+   "gLe": 0
+  }
+ ],
+ "cu": [
+  {
+   "ten": "Nguyễn Văn An",
+   "heSo": 0.3,
+   "soThang": 3
+  },
+  {
+   "ten": "Trần Thị Bình",
+   "heSo": 0.2,
+   "soThang": 3
+  },
+  {
+   "ten": "Lê Hoàng Cường",
+   "heSo": 0.15,
+   "soThang": 3
+  }
+ ],
+ "ctp": [
+  {
+   "ten": "Đặng Thị Lan",
+   "boPhan": "Phòng TCKT",
+   "xang": 240000,
+   "luuTru": 200000
+  },
+  {
+   "ten": "Lê Hoàng Cường",
+   "boPhan": "Phòng TCHC",
+   "xang": 180000,
+   "luuTru": 200000,
+   "phong": 350000
+  }
+ ],
+ "k1": [
+  {
+   "title": "BẢNG THANH TOÁN TIỀN TRUY LÃNH PHỤ CẤP ƯU ĐÃI NGHỀ",
+   "sub": "TỪ THÁNG 7 ĐẾN THÁNG 10/2026",
+   "nguon": "NS",
+   "lcb1": 2340000,
+   "lcb2": 2530000,
+   "items": [
+    {
+     "nhom": "Khoa Khám bệnh",
+     "ten": "Quách Văn Yên",
+     "ma": "V.08.01.03",
+     "hsl": 3.33,
+     "hs": 3.33,
+     "pctHuong": 0.4,
+     "pctTruy": 0.1,
+     "th1": 0,
+     "th2": 4
+    },
+    {
+     "nhom": "Khoa Khám bệnh",
+     "ten": "Âu Thị Ánh",
+     "ma": "V.08.01.03",
+     "hsl": 2.26,
+     "hs": 2.26,
+     "pctHuong": 0.4,
+     "pctTruy": 0.1,
+     "th1": 0,
+     "th2": 4
+    },
+    {
+     "nhom": "Khoa Nội tổng hợp",
+     "ten": "Ngô Thị Mỹ",
+     "ma": "V.08.01.03",
+     "hsl": 3.33,
+     "hs": 3.33,
+     "pctHuong": 0.4,
+     "pctTruy": 0.1,
+     "th1": 0,
+     "th2": 4
+    }
+   ]
+  }
+ ],
+ "cccd": {}
 }
