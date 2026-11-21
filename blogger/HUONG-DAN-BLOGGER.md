@@ -78,6 +78,7 @@ Làm tương tự với `mau-bai-viet.html`, gắn nhãn `Bài viết` + nhãn c
 ## Tùy chỉnh nhanh (Chủ đề → ▾ → Chỉnh sửa HTML)
 - **Màu**: tìm `--navy:#14234b` (màu chính) và `--accent:#f2a516` (màu nhấn).
 - **Chữ trên banner**: tìm `Công cụ nhỏ,` và đoạn `<p>Nơi chia sẻ...`.
+- **3 ô sản phẩm trên banner**: tìm `hero-tile`. Mỗi ô có tên, mô tả ngắn và link (mặc định mở trang tìm kiếm theo tên sản phẩm, vd `search?q=Ch%E1%BA%A5m%20c%C3%B4ng`). Khi đã đăng bài sản phẩm, có thể thay bằng đường dẫn bài, vd `data:blog.homepageUrl + &quot;2026/11/phan-mem-cham-cong-tram-y-te.html&quot;`.
 - **Tên nhãn sản phẩm / số sản phẩm trên trang chủ**: tìm `VNX_CONFIG` ở cuối file.
   Nếu đổi tên nhãn, sửa thêm chữ `Sản phẩm` trong dòng `l.name == &quot;Sản phẩm&quot;`.
 

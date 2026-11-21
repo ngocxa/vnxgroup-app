@@ -61,11 +61,19 @@ img{max-width:100%;height:auto}
 .hero h2 span{color:var(--accent)}
 .hero p{color:#c7d2ea;font-size:18px;margin:0 0 28px;max-width:560px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-art{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;font-family:var(--mono);font-size:14px;color:#cfe0ff;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.hero-art .dots{display:flex;gap:6px;margin-bottom:14px}
-.hero-art .dots i{width:11px;height:11px;border-radius:50%;background:#ff5f57;display:block}
-.hero-art .dots i:nth-child(2){background:#febc2e}.hero-art .dots i:nth-child(3){background:#28c840}
-.hero-art .k{color:var(--accent-2)}.hero-art .s{color:#8ee6a8}.hero-art .c{color:#7f8db0}
+.hero-tiles{display:flex;flex-direction:column;gap:12px}
+.ht-head{font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#aab6d3;margin:0 0 2px 4px}
+.hero-tile{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;transition:transform .18s,background .18s,border-color .18s;backdrop-filter:blur(4px)}
+.hero-tile:hover{color:#fff;transform:translateX(6px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+.ht-ic{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.ht-ic svg{width:28px;height:28px}
+.t1 .ht-ic{background:linear-gradient(135deg,#ff2d6a,#ff7a1a)}
+.t2 .ht-ic{background:linear-gradient(135deg,#12b53a,#0fb5a0)}
+.t3 .ht-ic{background:linear-gradient(135deg,#0a5fd1,#7c4dff)}
+.ht-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
+.ht-tx b{font-size:17px;font-weight:700}
+.ht-tx small{font-size:14px;color:#c7d2ea}
+.ht-go{font-size:28px;line-height:1;color:var(--accent-2);font-weight:700}
 
 /* ----- Buttons ----- */
 .btn,.vnx-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit;line-height:1.2}
@@ -196,7 +204,6 @@ img{max-width:100%;height:auto}
 @media (max-width:960px){
   .content{grid-template-columns:1fr}
   .hero .wrap{grid-template-columns:1fr}
-  .hero-art{display:none}
 }
 @media (max-width:720px){
   .nav-toggle{display:block}
@@ -207,6 +214,8 @@ img{max-width:100%;height:auto}
   .main-nav ul{flex-direction:column}
   .hero{padding:44px 0 52px}
   .hero h2{font-size:30px}
+  .hero-tile{padding:12px 14px}
+  .ht-ic{width:44px;height:44px}
   .hero p{font-size:16px}
   .post{padding:22px 18px}
   .post-title{font-size:26px}
@@ -254,7 +263,7 @@ img{max-width:100%;height:auto}
 <section class='hero'>
   <div class='wrap'>
     <div>
-      <span class='kicker'>Phần mềm miễn phí cho công việc văn phòng</span>
+      <span class='kicker'>Phần mềm cho kế toán &amp; văn phòng</span>
       <h2>Công cụ nhỏ, <span>giải quyết việc lớn</span></h2>
       <p>Nơi chia sẻ các phần mềm do VNXGroup tự phát triển – bảng lương, quản lý tài sản, ứng dụng di động – cùng các bài hướng dẫn sử dụng và kinh nghiệm tin học thực tế.</p>
       <div class='hero-actions'>
@@ -262,15 +271,23 @@ img{max-width:100%;height:auto}
         <a class='btn btn-ghost' expr:href='data:blog.homepageUrl + &quot;search/label/B%C3%A0i%20vi%E1%BA%BFt&quot;'>Đọc bài viết</a>
       </div>
     </div>
-    <div class='hero-art' aria-hidden='true'>
-      <div class='dots'><i>&#160;</i><i>&#160;</i><i>&#160;</i></div>
-      <div><span class='c'>// vnxgroup.app</span></div>
-      <div><span class='k'>const</span> sanPham = [</div>
-      <div>&#160;&#160;<span class='s'>"Bảng lương viên chức"</span>,</div>
-      <div>&#160;&#160;<span class='s'>"Quản lý tài sản"</span>,</div>
-      <div>&#160;&#160;<span class='s'>"App Giờ Kinh Tối"</span></div>
-      <div>];</div>
-      <div><span class='k'>export default</span> sanPham;</div>
+    <div class='hero-tiles'>
+      <span class='ht-head'>Sản phẩm của VNXGroup</span>
+      <a class='hero-tile t1' expr:href='data:blog.homepageUrl + &quot;search?q=B%E1%BA%A3ng%20l%C6%B0%C6%A1ng&quot;'>
+        <span class='ht-ic'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect height='12' rx='2' width='20' x='2' y='6'/><circle cx='12' cy='12' r='2.5'/><path d='M6 12h.01M18 12h.01'/></svg></span>
+        <span class='ht-tx'><b>Bảng lương viên chức</b><small>Tính lương, PCUĐ, BHXH, truy lĩnh</small></span>
+        <span class='ht-go'>&#8250;</span>
+      </a>
+      <a class='hero-tile t2' expr:href='data:blog.homepageUrl + &quot;search?q=Qu%E1%BA%A3n%20l%C3%BD%20t%C3%A0i%20s%E1%BA%A3n&quot;'>
+        <span class='ht-ic'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M3 21h18'/><path d='M5 21V8l7-4 7 4v13'/><path d='M9 21v-6h6v6'/><path d='M9 11h.01M15 11h.01'/></svg></span>
+        <span class='ht-tx'><b>Quản lý tài sản</b><small>Ghi tăng giảm, hao mòn, kiểm kê TSCĐ</small></span>
+        <span class='ht-go'>&#8250;</span>
+      </a>
+      <a class='hero-tile t3' expr:href='data:blog.homepageUrl + &quot;search?q=Ch%E1%BA%A5m%20c%C3%B4ng&quot;'>
+        <span class='ht-ic'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect height='17' rx='2' width='18' x='3' y='4'/><path d='M16 2v4M8 2v4M3 10h18'/><path d='m9 15 2 2 4-4'/></svg></span>
+        <span class='ht-tx'><b>Chấm công Trạm Y tế</b><small>Chấm trực tuyến, tự tính tiền trực</small></span>
+        <span class='ht-go'>&#8250;</span>
+      </a>
     </div>
   </div>
 </section>
