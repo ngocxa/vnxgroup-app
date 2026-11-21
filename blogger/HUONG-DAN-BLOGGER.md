@@ -9,6 +9,7 @@ Website **miễn phí 100%** (Blogger của Google): không mất tiền hosting
 | `vnxgroup-blogger-theme.xml` | Giao diện (theme) – tải lên Blogger 1 lần |
 | `mau-bai-san-pham.html` | Mẫu bài giới thiệu phần mềm (hộp thông tin, nút Tải về, ảnh, lịch sử cập nhật) |
 | `mau-bai-viet.html` | Mẫu bài hướng dẫn/kiến thức (có khung code, bảng, mẹo) |
+| `logo/` | Bộ logo VNXGroup: biểu tượng, logo ngang nền tối/sáng (SVG + PNG), favicon |
 | `xem-truoc.png`, `xem-truoc-bai-san-pham.png` | Ảnh xem trước trang chủ và trang bài sản phẩm |
 
 ## Bước 1 – Tạo blog (5 phút)
@@ -21,11 +22,26 @@ Website **miễn phí 100%** (Blogger của Google): không mất tiền hosting
 3. Nếu Blogger hỏi xóa tiện ích cũ → chọn **Xóa tiện ích**.
 4. Ở mục *Chủ đề dành cho thiết bị di động* chọn **Máy tính** (để điện thoại dùng cùng giao diện).
 
+## Logo
+Logo đã được **gắn sẵn trong giao diện** (thanh tiêu đề, hộp tác giả, ảnh thay thế khi bài chưa có ảnh bìa) – không cần tải lên.
+Chỉ cần thêm **favicon** (biểu tượng trên tab trình duyệt): **Bố cục → Biểu tượng trang web (Favicon) → Chỉnh sửa** → chọn `logo/favicon.ico`.
+
+| File trong `logo/` | Dùng cho |
+|---|---|
+| `vnxgroup-icon-512.png` | Biểu tượng nền trong suốt – chèn vào ảnh, video, slide |
+| `vnxgroup-avatar-512.png` | Ảnh đại diện nền trắng – YouTube, Facebook, Zalo, hồ sơ Blogger |
+| `vnxgroup-logo-nen-toi.png` | Logo ngang trên nền tối (banner, thumbnail YouTube nền tối) |
+| `vnxgroup-logo-nen-sang.png` | Logo ngang trên nền sáng (văn bản, ảnh bìa nền trắng) |
+| `*.svg` | Bản vector – phóng to bao nhiêu cũng nét, gửi cho nhà in |
+| `favicon.ico` | Favicon cho Blogger |
+
+> Khi tải lại giao diện mới, Blogger có thể hỏi xóa tiện ích *Header1* (tiêu đề cũ) – chọn **Xóa**, vì logo và tên blog nay được hiển thị trực tiếp. Tên hiển thị lấy từ **Cài đặt → Tiêu đề**.
+
 ## Bước 3 – Cài đặt cơ bản
 - **Cài đặt → Ngôn ngữ và định dạng**: Tiếng Việt, múi giờ GMT+7 (Bangkok/Hà Nội).
 - **Cài đặt → Mô tả**: viết 1–2 câu giới thiệu (Google dùng để hiển thị kết quả tìm kiếm).
 - **Cài đặt → Bình luận**: chọn *Bất kỳ ai* hoặc *Người dùng có Tài khoản Google*.
-- **Bố cục**: chỉnh menu (tiện ích *Menu chính*), sửa hộp *Về VNXGroup*, đổi logo ở *Tiêu đề*.
+- **Bố cục**: chỉnh menu (tiện ích *Menu chính*), sửa hộp *Về VNXGroup*.
   Trong *Bài đăng trên Blog* nên đặt **9 bài/trang** cho lưới đẹp.
 
 ## Bước 4 – Tạo 2 trang tĩnh (cho menu)
