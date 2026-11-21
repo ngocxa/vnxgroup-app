@@ -2,7 +2,7 @@
 """Tạo BẢN DÙNG THỬ (demo) cho các phần mềm VNXGroup Software.
 
 Cách dùng:
-  python3 build_demo.py <file_cham_cong.html> <file_nd30.html> <file_quan_ly_vien_chuc.html> <thu_muc_ra>
+  python3 build_demo.py <file_cham_cong.html> <file_nd30.html> <file_quan_ly_vien_chuc.html> <thu_muc_ra> [file_bang_luong.html]
 
 Mỗi bản demo:
   - chèn demo-guard.js vào đầu <head>: watermark, chặn In, chặn Xuất Word/Excel/PDF (vẫn cho sao lưu .json);
@@ -110,6 +110,27 @@ def build_vc(src, seed_json):
     return inject_head(s, 'Quản lý viên chức', pre)
 
 
+# ---------------- Bảng lương viên chức ----------------
+def build_bl(src, seed_json):
+    s = open(src, encoding='utf-8').read()
+    s = re.sub(r'const LOGO_BV = "data:image/[^"]*"', lambda m: 'const LOGO_BV = "' + LOGO + '"', s, count=1)
+    for old, new in [
+        ('coQuan: "SỞ Y TẾ TỈNH VĨNH LONG", donVi1: "BỆNH VIỆN ĐA KHOA KHU VỰC", donVi2: "NGUYỄN VĂN THỦ"',
+         'coQuan: "SỞ Y TẾ TỈNH AN BÌNH", donVi1: "TRUNG TÂM Y TẾ", donVi2: "KHU VỰC AN BÌNH"'),
+        ('diaDanh: "Trung Thành"', 'diaDanh: "An Bình"'),
+        ('donViNgan: "BVĐK khu vực Nguyễn Văn Thủ"', 'donViNgan: "TTYT khu vực An Bình"'),
+        ('"BỆNH VIỆN ĐA KHOA KHU VỰC NGUYỄN VĂN THỦ"', '"TRUNG TÂM Y TẾ KHU VỰC AN BÌNH"'),
+        (' (logo bệnh viện chỉ dùng cho BVĐK khu vực Nguyễn Văn Thủ)', ''),
+    ]:
+        s = must_replace(s, old, new)
+    s = s.replace('Nguyễn Văn Thủ', 'An Bình').replace('NGUYỄN VĂN THỦ', 'AN BÌNH')
+    seed = json.loads(seed_json); seed['settings']['logo'] = LOGO
+    key = f"{seed['settings']['nam']}-{seed['settings']['thang']:02d}"
+    pre = ("try{if(!localStorage.getItem('bangluong.periods.v1')){localStorage.setItem('bangluong.periods.v1'," +
+           json.dumps(json.dumps({key: seed}, ensure_ascii=False), ensure_ascii=False) + ");localStorage.setItem('bangluong.cur','" + key + "')}}catch(e){}")
+    return inject_head(s, 'Bảng lương viên chức', pre)
+
+
 README = """VNXGroup Software – BẢN DÙNG THỬ: {app}
 ========================================================
 
@@ -146,7 +167,10 @@ def pack(out_dir, base, app, html):
 
 if __name__ == '__main__':
     cc, nd, vc, out = sys.argv[1:5]
+    bl = sys.argv[5] if len(sys.argv) > 5 else None
     seed = open(os.path.join(HERE, 'seed-quan-ly-vien-chuc.json'), encoding='utf-8').read()
     pack(out, 'ChamCong_TramYTe_DungThu', 'Chấm công Trạm Y tế', build_cc(cc))
     pack(out, 'SoanThao_ND30_DungThu', 'Soạn thảo văn bản NĐ30', build_nd(nd))
     pack(out, 'QuanLyVienChuc_DungThu', 'Quản lý viên chức', build_vc(vc, seed))
+    if bl:
+        pack(out, 'BangLuong_DungThu', 'Bảng lương viên chức', build_bl(bl, open(os.path.join(HERE, 'seed-bang-luong.json'), encoding='utf-8').read()))
