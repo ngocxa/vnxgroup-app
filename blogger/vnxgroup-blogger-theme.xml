@@ -61,15 +61,16 @@ img{max-width:100%;height:auto}
 .hero h2 span{color:var(--accent)}
 .hero p{color:#c7d2ea;font-size:18px;margin:0 0 28px;max-width:560px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-tiles{display:flex;flex-direction:column;gap:12px}
+.hero-tiles{display:flex;flex-direction:column;gap:10px}
 .ht-head{font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#aab6d3;margin:0 0 2px 4px}
-.hero-tile{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;transition:transform .18s,background .18s,border-color .18s;backdrop-filter:blur(4px)}
+.hero-tile{display:flex;align-items:center;gap:16px;padding:13px 18px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;transition:transform .18s,background .18s,border-color .18s;backdrop-filter:blur(4px)}
 .hero-tile:hover{color:#fff;transform:translateX(6px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
 .ht-ic{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 18px rgba(0,0,0,.25)}
 .ht-ic svg{width:28px;height:28px}
 .t1 .ht-ic{background:linear-gradient(135deg,#ff2d6a,#ff7a1a)}
 .t2 .ht-ic{background:linear-gradient(135deg,#12b53a,#0fb5a0)}
 .t3 .ht-ic{background:linear-gradient(135deg,#0a5fd1,#7c4dff)}
+.t4 .ht-ic{background:linear-gradient(135deg,#ffb300,#ff7a1a)}
 .ht-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
 .ht-tx b{font-size:17px;font-weight:700}
 .ht-tx small{font-size:14px;color:#c7d2ea}
@@ -265,7 +266,7 @@ img{max-width:100%;height:auto}
     <div>
       <span class='kicker'>Phần mềm cho kế toán &amp; văn phòng</span>
       <h2>Công cụ nhỏ, <span>giải quyết việc lớn</span></h2>
-      <p>Nơi chia sẻ các phần mềm do VNXGroup tự phát triển – bảng lương, quản lý tài sản, ứng dụng di động – cùng các bài hướng dẫn sử dụng và kinh nghiệm tin học thực tế.</p>
+      <p>Nơi chia sẻ các phần mềm do VNXGroup tự phát triển – bảng lương, quản lý tài sản, chấm công, chuẩn hóa văn bản NĐ30 – cùng các bài hướng dẫn sử dụng và kinh nghiệm tin học thực tế.</p>
       <div class='hero-actions'>
         <a class='btn btn-primary' expr:href='data:blog.homepageUrl + &quot;search/label/S%E1%BA%A3n%20ph%E1%BA%A9m&quot;'>&#11015; Xem sản phẩm</a>
         <a class='btn btn-ghost' expr:href='data:blog.homepageUrl + &quot;search/label/B%C3%A0i%20vi%E1%BA%BFt&quot;'>Đọc bài viết</a>
@@ -286,6 +287,11 @@ img{max-width:100%;height:auto}
       <a class='hero-tile t3' expr:href='data:blog.homepageUrl + &quot;search?q=Ch%E1%BA%A5m%20c%C3%B4ng&quot;'>
         <span class='ht-ic'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect height='17' rx='2' width='18' x='3' y='4'/><path d='M16 2v4M8 2v4M3 10h18'/><path d='m9 15 2 2 4-4'/></svg></span>
         <span class='ht-tx'><b>Chấm công Trạm Y tế</b><small>Chấm trực tuyến, tự tính tiền trực</small></span>
+        <span class='ht-go'>&#8250;</span>
+      </a>
+      <a class='hero-tile t4' expr:href='data:blog.homepageUrl + &quot;search?q=N%C4%9030&quot;'>
+        <span class='ht-ic'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><path d='M14 2v6h6'/><path d='M8 13h5M8 17h3'/><path d='m14.5 16.5 1.5 1.5 3-3'/></svg></span>
+        <span class='ht-tx'><b>Chuẩn văn bản NĐ30</b><small>Kiểm tra, chuẩn hóa thể thức văn bản</small></span>
         <span class='ht-go'>&#8250;</span>
       </a>
     </div>
