@@ -24,3 +24,4 @@ Ghi chú:
 | Soạn thảo văn bản NĐ30 | https://youtu.be/0RK6bpUKC4o | `blogger/bai-viet/soan-thao-nd30/` |
 | Quản lý viên chức | https://youtu.be/K-jWJ8S7ank | `blogger/bai-viet/quan-ly-vien-chuc/` |
 | Bảng lương viên chức | https://youtu.be/f00UCbnUNiY | `blogger/bai-viet/bang-luong/` |
+| Quản lý tài sản công (VNX QLTS) | https://youtu.be/cV9T2NxzesI | `blogger/bai-viet/quan-ly-tai-san/` |
