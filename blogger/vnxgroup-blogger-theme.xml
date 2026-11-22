@@ -304,7 +304,7 @@ img{max-width:100%;height:auto}
       </a>
       <a class='hero-tile t2' expr:href='data:blog.homepageUrl + &quot;search?q=Qu%E1%BA%A3n%20l%C3%BD%20t%C3%A0i%20s%E1%BA%A3n&quot;'>
         <span class='ht-ic'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M3 21h18'/><path d='M5 21V8l7-4 7 4v13'/><path d='M9 21v-6h6v6'/><path d='M9 11h.01M15 11h.01'/></svg></span>
-        <span class='ht-tx'><b>Quản lý tài sản</b><small>Ghi tăng giảm, hao mòn, kiểm kê TSCĐ</small></span>
+        <span class='ht-tx'><b>Quản lý tài sản</b><small>Rà soát, báo hỏng, in nhãn mã QR</small></span>
         <span class='ht-go'>&#8250;</span>
       </a>
       <a class='hero-tile t3' expr:href='data:blog.homepageUrl + &quot;search?q=Ch%E1%BA%A5m%20c%C3%B4ng&quot;'>
